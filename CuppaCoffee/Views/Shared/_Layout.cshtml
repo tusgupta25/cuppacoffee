@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+                <a href="#" class="navbar-left"><img src="~/images/justcup.png" /></a>
+            <div class="navbar-header">
+
+                @Html.ActionLink("Cuppa Coffee", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="logincheckout">
+                
+                <p>@Html.ActionLink("My Account", "Login", "Home")</p>
+                <p>@Html.ActionLink("Checkout", "Login", "Home")</p>
+               
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Find Us", "About", "Home")</li>
+                    <li>@Html.ActionLink("Order", "Contact", "Home")</li>
+                    <li id="funfact">@Html.ActionLink("Fun facts", "Login", "Home")</li>
+                    <li id="extralink1">@Html.ActionLink("My Account", "Login", "Home")</li>
+                    <li id="extralink2">@Html.ActionLink("Checkout", "Login", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+      
+        <footer>
+            <p>&copy; @DateTime.Now.Year -Brewing since 1987</p>
+            <a href="https://www.google.com">Contact Us</a>
+            <a href=" https:www.facebook.com">About Us</a>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
