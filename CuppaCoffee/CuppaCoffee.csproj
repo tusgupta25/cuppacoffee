@@ -149,12 +149,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\css\Site.css" />
     <Content Include="images\justcup.png" />
     <Content Include="images\mascot.png" />
     <Content Include="images\sad kb.png" />
@@ -166,6 +165,7 @@
     <Content Include="images\.vs\ProjectSettings.json" />
     <Content Include="images\.vs\slnx.sqlite" />
     <Content Include="images\.vs\VSWorkspaceState.json" />
+    <None Include="Properties\PublishProfiles\CuppaCoffee - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
