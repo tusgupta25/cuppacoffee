@@ -7226,12 +7226,18 @@ display:none;
         width: 40vw;
     }
 
-    .loginpagetable{
-        height: 35vh;
+    .loginpagetable {
+        /*
+            height: 35vh;
         width:auto;
         border-radius: 10px;
       margin-top:4vh;
-     
+        */
+        height: auto;
+        border-radius: 10px;
+        width: auto;
+        position: relative;
+        margin-left: -55px;
     }
     
     .loginpagetable input {
@@ -7242,17 +7248,24 @@ display:none;
     }
 
     #logindetails {
-        margin-bottom: 15vh;
+        /*margin-bottom: 15vh;
         margin-top: 0;
-        margin-left: auto;
+        margin-left: auto;*/
+        position: absolute;
+        margin-top: -150px;
     }
     #signupsheet {
+        /* border: none;
+        width: 50vw;
+        float: right;
+        position: absolute;
+        left: 10vw;*/
         border: none;
         width: 50vw;
         float: right;
-        position:absolute;
-        left: 10vw;
-       
+        left: -24px;
+        position: relative;
+        margin-top: 120px;
     }
 
 }
