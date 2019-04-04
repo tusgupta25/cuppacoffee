@@ -1,9 +1,14 @@
-﻿<!--@{
+﻿@model MVCLogin.User
+@{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @*<h2>Login</h2>*@
+    @*@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken() // this is for prevent CSRF attack
+@Html.ValidationSummary(true)*@
 <table class="loginpagetable" >
     <tr>
         <td>
@@ -99,50 +104,43 @@ Choose your section.
         </td>
     </tr>
 
-</table> -->
-
-@model MVCLogin.User
-@{
-    ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-<h2>Login</h2>
+</table>
+    
 
 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
 {
     //this  is for create form tag
-    @Html.AntiForgeryToken() // this is for prevent CSRF attack
-    @Html.ValidationSummary(true)
+@Html.AntiForgeryToken() // this is for prevent CSRF attack
+@Html.ValidationSummary(true)
     if (@ViewBag.Message != null)
     {
-        <div style="border: 1px solid red">
-            @ViewBag.Message
-        </div>
+<div style="border: 1px solid red">
+    @ViewBag.Message
+</div>
     }
-    <table>
-        <tr>
-            <td>@Html.LabelFor(a => a.customer_email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })</td>
-            <td>@Html.TextBoxFor(a => a.customer_email)</td>
-            <td>@Html.ValidationMessageFor(a => a.customer_email)</td>
-        </tr>
-        <tr>
-            <td>
-                @Html.LabelFor(a => a.customer_password, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
-            </td>
-            <td>
-                @Html.PasswordFor(a => a.customer_password)
-            </td>
-            <td>
-                @Html.ValidationMessageFor(a => a.customer_password)
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type="submit" value="Login" />
-            </td>
-            <td></td>
-        </tr>
-    </table>
+<table>
+    <tr>
+        <td>@Html.LabelFor(a => a.customer_email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })</td>
+        <td>@Html.TextBoxFor(a => a.customer_email)</td>
+        <td>@Html.ValidationMessageFor(a => a.customer_email)</td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(a => a.customer_password, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
+        </td>
+        <td>
+            @Html.PasswordFor(a => a.customer_password)
+        </td>
+        <td>
+            @Html.ValidationMessageFor(a => a.customer_password)
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <input type="submit" value="Login" />
+        </td>
+        <td></td>
+    </tr>
+</table>
 }

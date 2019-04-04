@@ -352,16 +352,25 @@ textarea {
     border-spacing:1vw;
  
 }
-   
+.signupsheet {
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 1vw;
+    background-color: khaki;
+    border: hidden gray;
+    border-radius: 5%;
+    border-spacing: 1vw;
+    display: flex;
+    width: 30vw;
+}   
+
 /*Sumit login page table*/
 .loginpagetable {
     background-color: #54230A;
-    width: 100vw;
-    height:auto;
+    width: 96.6vw;
+    height: 62vh;
     text-align: center;
     padding-left: 5%;
-    border-spacing: 10px;
-    
 }
 
 a {
@@ -390,8 +399,8 @@ a:hover
         font-family: "Lucida Calligraphy";
         font-size: 1.15em;
         color: #6f4e37;
-        padding-bottom: 5%;
-        padding: 10px;
+        padding-right: 1vw;
+        margin-top: 4vh;
         display: inline-block;
     }
 
@@ -814,12 +823,7 @@ pre code {
   overflow-y: scroll;
 }
 
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
+
 
 .container:before,
 .container:after {
@@ -2074,7 +2078,7 @@ textarea.input-lg {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
-       -o-user-select: none;
+       
           user-select: none;
 }
 
@@ -4725,7 +4729,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 /*content backgrounds sumit*/
 #Contentbg {
-    width: 100vw;
+    width: 96.5vw;
+    min-width: 500px;
     height: auto;
     word-break: break-word;
     background-color: #54230A;
@@ -4739,7 +4744,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
     border-collapse: collapse;
 }
 #newContentbg {
-    width: 100vw;
+    width: 96.5vw;
+    min-width: 500px;
     height: auto;
     word-break: break-word;
     background-color: #54230A;
@@ -4772,13 +4778,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
 /*mascot attributes*/
 .mascot {
     vertical-align: top;
-    float:right;   
-   vertical-align:top;
-    margin-top: 1px;
+    float: right;
+    vertical-align: top;
+    margin-right: 3vw;
     width: 7vw;
     height: auto;
-    min-width:7vw;
-   
+    min-width: 7vw;
 }
 .mascotmobile {
     display:none;
@@ -4799,8 +4804,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 @media (min-width: 461px) {
     footer {
         vertical-align: bottom;
-        height: 100px;
-        width: 100%;
+        height: 20vh;
+        width: 96.6vw;
         background-color: khaki;
     }
         /*fot about us contact us in footer*/
