@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "UserPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>My Account</h2>
+
+<div class="container myaccountouter">
+    <form class="myaccount">
+        <div class="row">
+            <div class="col-25">
+                <label for="fname">First Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="fname" readonly="readonly" name="firstname" placeholder="Your name..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="lname">Last Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="lname" name="lastname" readonly="readonly" placeholder="Your last name..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="lname">Email Address</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="EmailID" name="emailAddress" readonly="readonly" placeholder="Your email address..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="lname">Phone Number</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="phoneNumber" name="phoneNumber" readonly="readonly" placeholder="Your phone number..">
+            </div>
+        </div>
+    </form>
+</div>

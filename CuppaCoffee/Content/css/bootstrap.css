@@ -185,13 +185,28 @@ select {
   border-color:#6f4e37;
   border-radius:5%;
 }
-
+/*karuna*/
+.myaccount {
+    text-transform: none;
+    font-family: sans-serif;
+    background-color: khaki;
+    border-color: #6f4e37;
+    border-radius: 5%;
+}
+.myaccountouter{
+    background-color: #54230A;
+    width: 96.6vw;
+    height: 62vh;
+    text-align: center;
+    padding-left: 5%;
+}
+}
 button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  cursor: pointer;
-  -webkit-appearance: button;
+    cursor: pointer;
+    -webkit-appearance: button;
 }
 
 button[disabled],
