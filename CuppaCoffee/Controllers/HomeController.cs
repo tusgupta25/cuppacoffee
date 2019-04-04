@@ -26,9 +26,23 @@ namespace CuppaCoffee.Controllers
 
             return View();
         }
-        public ActionResult Login()
+        public ActionResult Login(MVCLogin.User u)
         {
-            return View();
+            // this action is for handle post (login)
+            if (ModelState.IsValid) // this is check validity
+            {
+                using (CuppaDBEntities dc = new CuppaDBEntities())
+                {
+                    var v = dc.customers.Where(a => a.customer_email.Equals(u.customer_email) && a.customer_password.Equals(u.customer_password)).FirstOrDefault();
+                    if (v != null)
+                    {
+                        Session["LogedUserID"] = v.customer_email.ToString();
+                        Session["LogedUserFullname"] = v.customer_firstname.ToString();
+                        return RedirectToAction("Contact");
+                    }
+                }
+            }
+            return View(u);
         }
     }
 }

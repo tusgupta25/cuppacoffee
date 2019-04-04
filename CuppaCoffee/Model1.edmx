@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CuppaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="customers">
+          <Key>
+            <PropertyRef Name="customer_email" />
+          </Key>
+          <Property Name="customer_firstname" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="customer_lastname" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="customer_email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="customer_DOB" Type="date" />
+          <Property Name="customer_phonenumber" Type="varchar" MaxLength="20" />
+          <Property Name="customer_password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="drink_sizes">
+          <Key>
+            <PropertyRef Name="drink_size_code" />
+          </Key>
+          <Property Name="drink_size_code" Type="int" Nullable="false" />
+          <Property Name="drink_size_desc" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CuppaDB.dbo.drinks' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="drinks">
+          <Key>
+            <PropertyRef Name="product_ID" />
+            <PropertyRef Name="drink_size_code" />
+          </Key>
+          <Property Name="product_ID" Type="int" Nullable="false" />
+          <Property Name="drink_size_code" Type="int" Nullable="false" />
+          <Property Name="ingredients" Type="varchar" MaxLength="50" />
+          <Property Name="price" Type="int" />
+          <Property Name="flavor" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CuppaDB.dbo.food' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="food">
+          <Key>
+            <PropertyRef Name="product_ID" />
+          </Key>
+          <Property Name="product_ID" Type="int" Nullable="false" />
+          <Property Name="ingredients" Type="varchar" MaxLength="50" />
+          <Property Name="price" Type="int" />
+          <Property Name="contains_nuts" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CuppaDB.dbo.order_line' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="order_line">
+          <Key>
+            <PropertyRef Name="order_ID" />
+            <PropertyRef Name="product_ID" />
+            <PropertyRef Name="order_quantity" />
+          </Key>
+          <Property Name="order_ID" Type="int" Nullable="false" />
+          <Property Name="product_ID" Type="int" Nullable="false" />
+          <Property Name="order_quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="order_ID" />
+          </Key>
+          <Property Name="order_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="orderopendate" Type="date" Nullable="false" />
+          <Property Name="orderclosedate" Type="date" Nullable="false" />
+          <Property Name="order_status" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="order_cost" Type="int" Nullable="false" />
+          <Property Name="customer_email" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="product_types">
+          <Key>
+            <PropertyRef Name="product_type_code" />
+          </Key>
+          <Property Name="product_type_code" Type="int" Nullable="false" />
+          <Property Name="product_type_desc" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="product_ID" />
+          </Key>
+          <Property Name="product_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="product_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="product_type_code" Type="int" />
+          <Property Name="product_unit_cost" Type="int" Nullable="false" />
+          <Property Name="product_desc" Type="varchar" MaxLength="100" />
+          <Property Name="product_quantity" Type="int" />
+        </EntityType>
+        <Association Name="FK__drinks__drink_si__52593CB8">
+          <End Role="drink_sizes" Type="Self.drink_sizes" Multiplicity="1" />
+          <End Role="drinks" Type="Self.drinks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="drink_sizes">
+              <PropertyRef Name="drink_size_code" />
+            </Principal>
+            <Dependent Role="drinks">
+              <PropertyRef Name="drink_size_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__drinks__product___5165187F">
+          <End Role="products" Type="Self.products" Multiplicity="1" />
+          <End Role="drinks" Type="Self.drinks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="product_ID" />
+            </Principal>
+            <Dependent Role="drinks">
+              <PropertyRef Name="product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__food__product_ID__4F7CD00D">
+          <End Role="products" Type="Self.products" Multiplicity="1" />
+          <End Role="food" Type="Self.food" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="product_ID" />
+            </Principal>
+            <Dependent Role="food">
+              <PropertyRef Name="product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__order_lin__order__59FA5E80">
+          <End Role="orders" Type="Self.orders" Multiplicity="1" />
+          <End Role="order_line" Type="Self.order_line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orders">
+              <PropertyRef Name="order_ID" />
+            </Principal>
+            <Dependent Role="order_line">
+              <PropertyRef Name="order_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__order_lin__produ__59063A47">
+          <End Role="products" Type="Self.products" Multiplicity="1" />
+          <End Role="order_line" Type="Self.order_line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="product_ID" />
+            </Principal>
+            <Dependent Role="order_line">
+              <PropertyRef Name="product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__orders__customer__571DF1D5">
+          <End Role="customers" Type="Self.customers" Multiplicity="1" />
+          <End Role="orders" Type="Self.orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="customer_email" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="customer_email" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__products__produc__4D94879B">
+          <End Role="product_types" Type="Self.product_types" Multiplicity="0..1" />
+          <End Role="products" Type="Self.products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product_types">
+              <PropertyRef Name="product_type_code" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="product_type_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CuppaDBModelStoreContainer">
+          <EntitySet Name="customers" EntityType="Self.customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="drink_sizes" EntityType="Self.drink_sizes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="orders" EntityType="Self.orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="product_types" EntityType="Self.product_types" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="products" EntityType="Self.products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="drinks" EntityType="Self.drinks" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [drinks].[product_ID] AS [product_ID], 
+    [drinks].[drink_size_code] AS [drink_size_code], 
+    [drinks].[ingredients] AS [ingredients], 
+    [drinks].[price] AS [price], 
+    [drinks].[flavor] AS [flavor]
+    FROM [dbo].[drinks] AS [drinks]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="food" EntityType="Self.food" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [food].[product_ID] AS [product_ID], 
+    [food].[ingredients] AS [ingredients], 
+    [food].[price] AS [price], 
+    [food].[contains_nuts] AS [contains_nuts]
+    FROM [dbo].[food] AS [food]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="order_line" EntityType="Self.order_line" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [order_line].[order_ID] AS [order_ID], 
+    [order_line].[product_ID] AS [product_ID], 
+    [order_line].[order_quantity] AS [order_quantity]
+    FROM [dbo].[order_line] AS [order_line]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__drinks__drink_si__52593CB8" Association="Self.FK__drinks__drink_si__52593CB8">
+            <End Role="drink_sizes" EntitySet="drink_sizes" />
+            <End Role="drinks" EntitySet="drinks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__drinks__product___5165187F" Association="Self.FK__drinks__product___5165187F">
+            <End Role="products" EntitySet="products" />
+            <End Role="drinks" EntitySet="drinks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__food__product_ID__4F7CD00D" Association="Self.FK__food__product_ID__4F7CD00D">
+            <End Role="products" EntitySet="products" />
+            <End Role="food" EntitySet="food" />
+          </AssociationSet>
+          <AssociationSet Name="FK__order_lin__order__59FA5E80" Association="Self.FK__order_lin__order__59FA5E80">
+            <End Role="orders" EntitySet="orders" />
+            <End Role="order_line" EntitySet="order_line" />
+          </AssociationSet>
+          <AssociationSet Name="FK__order_lin__produ__59063A47" Association="Self.FK__order_lin__produ__59063A47">
+            <End Role="products" EntitySet="products" />
+            <End Role="order_line" EntitySet="order_line" />
+          </AssociationSet>
+          <AssociationSet Name="FK__orders__customer__571DF1D5" Association="Self.FK__orders__customer__571DF1D5">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__products__produc__4D94879B" Association="Self.FK__products__produc__4D94879B">
+            <End Role="product_types" EntitySet="product_types" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CuppaDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="customer_email" />
+          </Key>
+          <Property Name="customer_firstname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="customer_lastname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="customer_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="customer_DOB" Type="DateTime" Precision="0" />
+          <Property Name="customer_phonenumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="customer_password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="orders" Relationship="Self.FK__orders__customer__571DF1D5" FromRole="customers" ToRole="orders" />
+        </EntityType>
+        <EntityType Name="drink_sizes">
+          <Key>
+            <PropertyRef Name="drink_size_code" />
+          </Key>
+          <Property Name="drink_size_code" Type="Int32" Nullable="false" />
+          <Property Name="drink_size_desc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="drinks" Relationship="Self.FK__drinks__drink_si__52593CB8" FromRole="drink_sizes" ToRole="drinks" />
+        </EntityType>
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="order_ID" />
+          </Key>
+          <Property Name="order_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orderopendate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="orderclosedate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="order_status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="order_cost" Type="Int32" Nullable="false" />
+          <Property Name="customer_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="customer" Relationship="Self.FK__orders__customer__571DF1D5" FromRole="orders" ToRole="customers" />
+          <NavigationProperty Name="order_line" Relationship="Self.FK__order_lin__order__59FA5E80" FromRole="orders" ToRole="order_line" />
+        </EntityType>
+        <EntityType Name="product_types">
+          <Key>
+            <PropertyRef Name="product_type_code" />
+          </Key>
+          <Property Name="product_type_code" Type="Int32" Nullable="false" />
+          <Property Name="product_type_desc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="products" Relationship="Self.FK__products__produc__4D94879B" FromRole="product_types" ToRole="products" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="product_ID" />
+          </Key>
+          <Property Name="product_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="product_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="product_type_code" Type="Int32" />
+          <Property Name="product_unit_cost" Type="Int32" Nullable="false" />
+          <Property Name="product_desc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="product_quantity" Type="Int32" />
+          <NavigationProperty Name="product_types" Relationship="Self.FK__products__produc__4D94879B" FromRole="products" ToRole="product_types" />
+          <NavigationProperty Name="drinks" Relationship="Self.FK__drinks__product___5165187F" FromRole="products" ToRole="drinks" />
+          <NavigationProperty Name="food" Relationship="Self.FK__food__product_ID__4F7CD00D" FromRole="products" ToRole="food" />
+          <NavigationProperty Name="order_line" Relationship="Self.FK__order_lin__produ__59063A47" FromRole="products" ToRole="order_line" />
+        </EntityType>
+        <EntityType Name="drink">
+          <Key>
+            <PropertyRef Name="product_ID" />
+            <PropertyRef Name="drink_size_code" />
+          </Key>
+          <Property Name="product_ID" Type="Int32" Nullable="false" />
+          <Property Name="drink_size_code" Type="Int32" Nullable="false" />
+          <Property Name="ingredients" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Int32" />
+          <Property Name="flavor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="drink_sizes" Relationship="Self.FK__drinks__drink_si__52593CB8" FromRole="drinks" ToRole="drink_sizes" />
+          <NavigationProperty Name="product" Relationship="Self.FK__drinks__product___5165187F" FromRole="drinks" ToRole="products" />
+        </EntityType>
+        <EntityType Name="food">
+          <Key>
+            <PropertyRef Name="product_ID" />
+          </Key>
+          <Property Name="product_ID" Type="Int32" Nullable="false" />
+          <Property Name="ingredients" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Int32" />
+          <Property Name="contains_nuts" Type="Boolean" />
+          <NavigationProperty Name="product" Relationship="Self.FK__food__product_ID__4F7CD00D" FromRole="food" ToRole="products" />
+        </EntityType>
+        <EntityType Name="order_line">
+          <Key>
+            <PropertyRef Name="order_ID" />
+            <PropertyRef Name="product_ID" />
+            <PropertyRef Name="order_quantity" />
+          </Key>
+          <Property Name="order_ID" Type="Int32" Nullable="false" />
+          <Property Name="product_ID" Type="Int32" Nullable="false" />
+          <Property Name="order_quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="order" Relationship="Self.FK__order_lin__order__59FA5E80" FromRole="order_line" ToRole="orders" />
+          <NavigationProperty Name="product" Relationship="Self.FK__order_lin__produ__59063A47" FromRole="order_line" ToRole="products" />
+        </EntityType>
+        <Association Name="FK__orders__customer__571DF1D5">
+          <End Role="customers" Type="Self.customer" Multiplicity="1" />
+          <End Role="orders" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="customer_email" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="customer_email" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__drinks__drink_si__52593CB8">
+          <End Role="drink_sizes" Type="Self.drink_sizes" Multiplicity="1" />
+          <End Role="drinks" Type="Self.drink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="drink_sizes">
+              <PropertyRef Name="drink_size_code" />
+            </Principal>
+            <Dependent Role="drinks">
+              <PropertyRef Name="drink_size_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__order_lin__order__59FA5E80">
+          <End Role="orders" Type="Self.order" Multiplicity="1" />
+          <End Role="order_line" Type="Self.order_line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orders">
+              <PropertyRef Name="order_ID" />
+            </Principal>
+            <Dependent Role="order_line">
+              <PropertyRef Name="order_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__products__produc__4D94879B">
+          <End Role="product_types" Type="Self.product_types" Multiplicity="0..1" />
+          <End Role="products" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product_types">
+              <PropertyRef Name="product_type_code" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="product_type_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__drinks__product___5165187F">
+          <End Role="products" Type="Self.product" Multiplicity="1" />
+          <End Role="drinks" Type="Self.drink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="product_ID" />
+            </Principal>
+            <Dependent Role="drinks">
+              <PropertyRef Name="product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__food__product_ID__4F7CD00D">
+          <End Role="products" Type="Self.product" Multiplicity="1" />
+          <End Role="food" Type="Self.food" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="product_ID" />
+            </Principal>
+            <Dependent Role="food">
+              <PropertyRef Name="product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__order_lin__produ__59063A47">
+          <End Role="products" Type="Self.product" Multiplicity="1" />
+          <End Role="order_line" Type="Self.order_line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="product_ID" />
+            </Principal>
+            <Dependent Role="order_line">
+              <PropertyRef Name="product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CuppaDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="customers" EntityType="Self.customer" />
+          <EntitySet Name="drink_sizes" EntityType="Self.drink_sizes" />
+          <EntitySet Name="orders" EntityType="Self.order" />
+          <EntitySet Name="product_types" EntityType="Self.product_types" />
+          <EntitySet Name="products" EntityType="Self.product" />
+          <EntitySet Name="drinks" EntityType="Self.drink" />
+          <EntitySet Name="foods" EntityType="Self.food" />
+          <EntitySet Name="order_line" EntityType="Self.order_line" />
+          <AssociationSet Name="FK__orders__customer__571DF1D5" Association="Self.FK__orders__customer__571DF1D5">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__drinks__drink_si__52593CB8" Association="Self.FK__drinks__drink_si__52593CB8">
+            <End Role="drink_sizes" EntitySet="drink_sizes" />
+            <End Role="drinks" EntitySet="drinks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__order_lin__order__59FA5E80" Association="Self.FK__order_lin__order__59FA5E80">
+            <End Role="orders" EntitySet="orders" />
+            <End Role="order_line" EntitySet="order_line" />
+          </AssociationSet>
+          <AssociationSet Name="FK__products__produc__4D94879B" Association="Self.FK__products__produc__4D94879B">
+            <End Role="product_types" EntitySet="product_types" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__drinks__product___5165187F" Association="Self.FK__drinks__product___5165187F">
+            <End Role="products" EntitySet="products" />
+            <End Role="drinks" EntitySet="drinks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__food__product_ID__4F7CD00D" Association="Self.FK__food__product_ID__4F7CD00D">
+            <End Role="products" EntitySet="products" />
+            <End Role="food" EntitySet="foods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__order_lin__produ__59063A47" Association="Self.FK__order_lin__produ__59063A47">
+            <End Role="products" EntitySet="products" />
+            <End Role="order_line" EntitySet="order_line" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CuppaDBModelStoreContainer" CdmEntityContainer="CuppaDBEntities">
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="CuppaDBModel.customer">
+              <MappingFragment StoreEntitySet="customers">
+                <ScalarProperty Name="customer_firstname" ColumnName="customer_firstname" />
+                <ScalarProperty Name="customer_lastname" ColumnName="customer_lastname" />
+                <ScalarProperty Name="customer_email" ColumnName="customer_email" />
+                <ScalarProperty Name="customer_DOB" ColumnName="customer_DOB" />
+                <ScalarProperty Name="customer_phonenumber" ColumnName="customer_phonenumber" />
+                <ScalarProperty Name="customer_password" ColumnName="customer_password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="drink_sizes">
+            <EntityTypeMapping TypeName="CuppaDBModel.drink_sizes">
+              <MappingFragment StoreEntitySet="drink_sizes">
+                <ScalarProperty Name="drink_size_code" ColumnName="drink_size_code" />
+                <ScalarProperty Name="drink_size_desc" ColumnName="drink_size_desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders">
+            <EntityTypeMapping TypeName="CuppaDBModel.order">
+              <MappingFragment StoreEntitySet="orders">
+                <ScalarProperty Name="order_ID" ColumnName="order_ID" />
+                <ScalarProperty Name="orderopendate" ColumnName="orderopendate" />
+                <ScalarProperty Name="orderclosedate" ColumnName="orderclosedate" />
+                <ScalarProperty Name="order_status" ColumnName="order_status" />
+                <ScalarProperty Name="order_cost" ColumnName="order_cost" />
+                <ScalarProperty Name="customer_email" ColumnName="customer_email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product_types">
+            <EntityTypeMapping TypeName="CuppaDBModel.product_types">
+              <MappingFragment StoreEntitySet="product_types">
+                <ScalarProperty Name="product_type_code" ColumnName="product_type_code" />
+                <ScalarProperty Name="product_type_desc" ColumnName="product_type_desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="CuppaDBModel.product">
+              <MappingFragment StoreEntitySet="products">
+                <ScalarProperty Name="product_ID" ColumnName="product_ID" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="product_type_code" ColumnName="product_type_code" />
+                <ScalarProperty Name="product_unit_cost" ColumnName="product_unit_cost" />
+                <ScalarProperty Name="product_desc" ColumnName="product_desc" />
+                <ScalarProperty Name="product_quantity" ColumnName="product_quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="drinks">
+            <EntityTypeMapping TypeName="CuppaDBModel.drink">
+              <MappingFragment StoreEntitySet="drinks">
+                <ScalarProperty Name="product_ID" ColumnName="product_ID" />
+                <ScalarProperty Name="drink_size_code" ColumnName="drink_size_code" />
+                <ScalarProperty Name="ingredients" ColumnName="ingredients" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="flavor" ColumnName="flavor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="foods">
+            <EntityTypeMapping TypeName="CuppaDBModel.food">
+              <MappingFragment StoreEntitySet="food">
+                <ScalarProperty Name="product_ID" ColumnName="product_ID" />
+                <ScalarProperty Name="ingredients" ColumnName="ingredients" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="contains_nuts" ColumnName="contains_nuts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="order_line">
+            <EntityTypeMapping TypeName="CuppaDBModel.order_line">
+              <MappingFragment StoreEntitySet="order_line">
+                <ScalarProperty Name="order_ID" ColumnName="order_ID" />
+                <ScalarProperty Name="product_ID" ColumnName="product_ID" />
+                <ScalarProperty Name="order_quantity" ColumnName="order_quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
