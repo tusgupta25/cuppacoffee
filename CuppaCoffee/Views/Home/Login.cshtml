@@ -5,10 +5,12 @@
 }
 
 @*<h2>Login</h2>*@
-    @*@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
 {
     @Html.AntiForgeryToken() // this is for prevent CSRF attack
-@Html.ValidationSummary(true)*@
+@Html.ValidationSummary(true)
+        
+
 <table class="loginpagetable" >
     <tr>
         <td>
@@ -16,19 +18,25 @@
 
                 <tr>
                     <td>
-                        <text>User ID</text>
+                        @Html.LabelFor(a => a.customer_email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })
                     </td>
                     <td>
-                        <input id="loginID" type="email"placeholder="Your email ID" />
+                        @Html.TextBoxFor(a => a.customer_email)
+                        @*<input id="loginID" type="email" placeholder="Your email ID" />*@
                     </td>
+                    @*<td>@Html.ValidationMessageFor(a => a.customer_email)</td>*@
                 </tr>
                 <tr>
                     <td>
-                        <text>Password</text>
+                        @Html.LabelFor(a => a.customer_password, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
+                        @*<text>Password</text>*@
                     </td>
                     <td>
-                        <input id="password" type="password"/>
+                        @Html.PasswordFor(a => a.customer_password)
                     </td>
+                    @*<td>
+                        @Html.ValidationMessageFor(a => a.customer_password)
+                    </td>*@
                 </tr>
                 <tr>
                     <td colspan="2" id="buttonthings">
@@ -105,9 +113,9 @@ Choose your section.
     </tr>
 
 </table>
-    
 
-@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+        
+@*@using (Html.BeginForm("Login", "Home", FormMethod.Post))
 {
     //this  is for create form tag
 @Html.AntiForgeryToken() // this is for prevent CSRF attack
@@ -117,8 +125,8 @@ Choose your section.
 <div style="border: 1px solid red">
     @ViewBag.Message
 </div>
-    }
-<table>
+    }*@
+@*<table>
     <tr>
         <td>@Html.LabelFor(a => a.customer_email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })</td>
         <td>@Html.TextBoxFor(a => a.customer_email)</td>
@@ -142,5 +150,5 @@ Choose your section.
         </td>
         <td></td>
     </tr>
-</table>
+</table>*@
 }

@@ -26,6 +26,13 @@ namespace CuppaCoffee.Controllers
 
             return View();
         }
+
+        public ActionResult UserPage()
+        {
+            return View();
+        }
+        
+       
         public ActionResult Login(MVCLogin.User u)
         {
             // this action is for handle post (login)
@@ -38,7 +45,7 @@ namespace CuppaCoffee.Controllers
                     {
                         Session["LogedUserID"] = v.customer_email.ToString();
                         Session["LogedUserFullname"] = v.customer_firstname.ToString();
-                        return RedirectToAction("Contact");
+                        return RedirectToAction("UserPage");
                     }
                 }
             }

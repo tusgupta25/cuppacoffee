@@ -389,18 +389,17 @@ a:hover
 /*login and checkout options sumit*/
 .logincheckout {
     position: relative;
-    
+    display:inline-block;
     float: right;
-    margin-top: 5%;
-    margin-right: 5%;
+    margin-top: 5vh;
+    margin-right: 5vw;
 }
 
     .logincheckout > p {
+        padding-right:2vw;
         font-family: "Lucida Calligraphy";
-        font-size: 1.15em;
+        font-size: 1.3vw;
         color: #6f4e37;
-        padding-right: 1vw;
-        margin-top: 4vh;
         display: inline-block;
     }
 
@@ -797,9 +796,8 @@ pre {
   max-width:30vw;
   max-height:23vh;
   text-align: center;
-  padding:10%;
   display: block;
-  font-size: 1em;
+  font-size: 1.1vw;
   color: blanchedalmond;
   /*word-break: break-all;*/
   word-wrap: break-word;
@@ -3853,21 +3851,21 @@ textarea.input-group-sm > .input-group-btn > .btn {
  padding:0;
 }
 
-.nav:before,
+/*.nav:before,
 .nav:after {
   display: table;
   content: " ";
-}
+}*/
 
 .nav:after {
   clear: both;
 }
 
-.nav:before,
+/*.nav:before,
 .nav:after {
   display: table;
   content: " ";
-}
+}*/
 
 .nav:after {
   clear: both;
@@ -3875,7 +3873,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .nav > li {
   position: relative;
-  display: block;
+  display: inline-block;
 }
 
 .nav > li > a {
@@ -4267,12 +4265,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
 /*Cuppa Coffee*/
 .navbar-brand {
   position:absolute;
- 
-  font-size: 2em;
-  margin-left: 7%;
-  margin-top:3%;
+  font-size: 2vw;
+  margin-left: 7vw;
+  margin-top:5vh;
   font-weight: bold;
 } 
+
 
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -4282,9 +4280,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
     .navbar > .container .navbar-brand {
         position: absolute;
-        font-size: 2em;
-        margin-left: 7%;
-        margin-top: 3%;
+        font-size: 2vw;
+        margin-left: 7vw;
+        margin-top: 5vh;
 
     }
 }
@@ -4601,7 +4599,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   background-color:khaki;
   border-color: transparent;
   height:20vh;
-  width:98vw;
+  width:96.5vw;
   display:inline-block;
  margin-left:1vw;
 }
@@ -4693,9 +4691,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 @media (max-width: 767px) {
-  .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
+  /*.navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
     border-color: #080808;
-  }
+  }*/
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
     color: #999999;
   }
