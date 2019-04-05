@@ -14,7 +14,13 @@
                 <label for="fname">First Name</label>
             </div>
             <div>
-                <input type="text" id="fname" readonly="readonly" name="firstname" placeholder="Your name..">
+                <!--<input type="text" id="fname" readonly="readonly" name="firstname" placeholder="Your name.."> -->
+                @if (Session["LoggedUserFirstName"] != null)
+                {
+                    <text>
+                        @Session["LoggedUserFirstName"].ToString()
+                    </text>
+                }
             </div>
         </div>
         <div class="row">
@@ -22,7 +28,13 @@
                 <label for="lname">Last Name</label>
             </div>
             <div>
-                <input type="text" id="lname" name="lastname" readonly="readonly" placeholder="Your last name..">
+                <!-- <input type="text" id="lname" name="lastname" readonly="readonly" placeholder="Your last name.."> -->
+                @if (Session["LoggedUserLastName"] != null)
+                {
+                    <text>
+                        @Session["LoggedUserLastName"].ToString()
+                    </text>
+                }
             </div>
         </div>
         <div class="row">
@@ -30,7 +42,13 @@
                 <label for="lname">Email Address</label>
             </div>
             <div>
-                <input type="text" id="EmailID" name="emailAddress" readonly="readonly" placeholder="Your email address..">
+                <!-- <input type="text" id="EmailID" name="emailAddress" readonly="readonly" placeholder="Your email address.."> -->
+                @if (Session["LoggedUserID"] != null)
+                {
+                    <text>
+                        @Session["LoggedUserID"].ToString()
+                    </text>
+                }
             </div>
         </div>
         <div class="row">
@@ -38,7 +56,13 @@
                 <label for="lname">Phone Number</label>
             </div>
             <div>
-                <input type="text" id="phoneNumber" name="phoneNumber" readonly="readonly" placeholder="Your phone number..">
+                <!-- <input type="text" id="phoneNumber" name="phoneNumber" readonly="readonly" placeholder="Your phone number.."> -->
+                @if (Session["LoggedUserPhoneNumber"] != null)
+                {
+                    <text>
+                        @Session["LoggedUserPhoneNumber"].ToString()
+                    </text>
+                }
             </div>
         </div>
         <img src="~/images/mascot.png" />

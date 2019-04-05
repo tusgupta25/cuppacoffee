@@ -41,8 +41,25 @@ namespace CuppaCoffee.Controllers
                     var v = dc.customers.Where(a => a.customer_email.Equals(u.customer_email) && a.customer_password.Equals(u.customer_password)).FirstOrDefault();
                     if (v != null)
                     {
-                        Session["LogedUserID"] = v.customer_email.ToString();
-                        Session["LogedUserFullname"] = v.customer_firstname.ToString();
+                        Session["LoggedUserID"] = v.customer_email.ToString();
+                        Session["LoggedUserFirstname"] = v.customer_firstname.ToString();
+                        Session["LoggedUserLastName"] = v.customer_lastname.ToString();
+                        if (v.customer_phonenumber != null)
+                        {
+                            Session["LogedUserPhoneNumber"] = v.customer_phonenumber.ToString();
+                        }
+                        else
+                        {
+                            Session["LoggedUserPhoneNumber"] = "N/A".ToString();
+                        }
+                        if (v.customer_DOB != null)
+                        {
+                            Session["LoggedUserDOB"] = v.customer_DOB.ToString();
+                        }
+                        else
+                        {
+                            Session["LoggedUserDOB"] = "N/A".ToString();
+                        }
                         return RedirectToAction("UserPage");
                     }
                 }
