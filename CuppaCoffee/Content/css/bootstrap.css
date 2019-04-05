@@ -185,13 +185,59 @@ select {
   border-color:#6f4e37;
   border-radius:5%;
 }
+/*karuna*/
+.myaccount {
+    text-transform: none;
+    background-color: khaki;
+    border-color: #6f4e37;
+    font-weight: bold;
+    padding: 1vw;
+    background-color: khaki;
+    border-radius: 5%;
+    border-spacing: 1vw;
+    font-family: "Lucida Calligraphy";
+    font-size: 1.2em;
+    padding-bottom: 10vh;
+    font-style: italic;
+    color: #6f4e37;
+    border-left: 1em double #6f4e37;
+    border-right: 1em double #6f4e37;
+}
+    .myaccount .row{
+        margin-bottom: -.5vh;        
+    }
+
+    .myaccount h2 {
+        font-family: "Lucida Calligraphy";
+    }
+
+    .myaccount input{
+        width: 200vw;
+        height: 7vh;
+        margin-top: 2vh;
+        border-radius: 10%;
+        color: black;
+    }
+.myaccountouter {
+    background-color: #54230A;
+    width: auto;
+    height: auto;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.myaccount img {
+    float: right;
+    width :10vw;
+}
 
 button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  cursor: pointer;
-  -webkit-appearance: button;
+    cursor: pointer;
+    -webkit-appearance: button;
 }
 
 button[disabled],
@@ -371,6 +417,7 @@ textarea {
     height: 62vh;
     text-align: center;
     padding-left: 5%;
+
 }
 
 a {
@@ -468,6 +515,8 @@ p {
     width:3vw;
     height:6vh;
     background-color:white;
+    border-radius: 15%;
+    margin-right: .4vw;
 }
 .lead {
   margin-bottom: 20px;
@@ -774,6 +823,7 @@ address {
   margin-bottom: 20px;
   font-style: normal;
   line-height: 1.428571429;
+  margin-top: -2vh;
 }
 
 code,
@@ -7270,7 +7320,15 @@ display:none;
         position: relative;
         margin-top: 120px;
     }
-
+    .myaccountouter{
+        margin-left: -15vw;
+       width: 60vw;
+       border-radius: 5%;
+       margin-top: 2vh;
+    }
+    .myaccount input{
+        width: 40vw;
+    }
 }
 
 

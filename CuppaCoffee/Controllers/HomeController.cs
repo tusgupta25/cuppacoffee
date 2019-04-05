@@ -31,8 +31,6 @@ namespace CuppaCoffee.Controllers
         {
             return View();
         }
-        
-       
         public ActionResult Login(MVCLogin.User u)
         {
             // this action is for handle post (login)
