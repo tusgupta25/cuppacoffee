@@ -4366,9 +4366,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
   }
 }
 
-.navbar-nav {
+/*.navbar-nav {
   margin: 7.5px -15px;
-}
+}*/
 
     .navbar-nav > li > a {
        margin-left: auto;
@@ -7166,18 +7166,21 @@ a.list-group-item:focus {
     .index_text {
         display: none;
     }
+    /*the cup*/
     .navbar .navbar-left img {
-        width: 50vw;
+        width: 35vw;
         display: block;
         margin-left: auto;
         margin-right: auto;
-        height: 35vh;
-        margin-top: 10vh;
+        height: 25vh;
+        margin-top: 5vh;
         font-weight:bold;
     }
+    
     .nav >ul{
         margin-right:10vw;
     }
+    /*navigational links*/
     .nav > li {
        
         display: block;
@@ -7265,7 +7268,8 @@ display:none;
         transition: none;
     }
     .nav {
-        margin-top: 15vh;
+        font-size:1.4em;
+        margin-top: 20vh;
         position: absolute;
     }
     .navbar-brand {
