@@ -7182,13 +7182,15 @@ a.list-group-item:focus {
         display: none;
     }
     #newContentbg {
-        border: none;
+
         border-radius: 10px;
-        width: 50vw;
         float: right;
-        margin-left: 0vw;
+        margin-left: -45%;
         position: absolute;
-        right: 2vw;
+        margin-top: 20%;
+
+
+
     }
     #Contentbg{
         display:none;
@@ -7211,33 +7213,36 @@ a.list-group-item:focus {
 
 #funfact{
     display:none;
-} 
+}
     .body-content {
-        border: none;
-        width: 50vw;
-        float: right;
-        margin-left: 0vw;
+        /*border: none;*/
+        /* width: 50px;*/
+       /* float: right;*/
+        margin-left: 45%;
         position: absolute;
-        right: 2vw;
-        margin-top: 35vh;
-        height: auto;
+        /*right: 2vw;*/
+        margin-top: 60%;
     }
     #addressbg h3 {
         display: none;
     }
     #addressbg {
         border: none;
+      
     }
     #addressbg address{
         display: none;
     }
         #addressbg td {
-            margin-left: 1vw;
+            margin-left: 1%;
             float: left;
             clear: both;
+            width: auto;
         }
         #addressbg strong{
             margin: auto;
+            font-size: 4em;
+
         }
 
 
@@ -7262,9 +7267,15 @@ display:none;
         position: absolute;
     }
     .navbar-brand {
-        margin-top: 10vw;
+        margin-top: 5%;
         display: block;
+        font-size: 2em;
+        margin-left: 15%;
         text-align: center;
+    }
+
+    .nav >li{
+       display: block;
     }
     .loginpagetable strong{
         display: none;
@@ -7276,7 +7287,7 @@ display:none;
         display: none;
     }
     .loginpagetable button{
-        width: 40vw;
+        width:50%;
     }
 
     .loginpagetable {
@@ -7288,13 +7299,13 @@ display:none;
         */
         height: auto;
         border-radius: 10px;
-        width: auto;
+        /*width: auto;*/
         position: relative;
-        margin-left: -55px;
+        margin-left: -10%;
     }
     
     .loginpagetable input {
-        width: 55vw;
+        width: 75%;
     }
     .logindetails tr{
         text-align: center;
@@ -7316,7 +7327,8 @@ display:none;
         border: none;
         width: 50vw;
         float: right;
-        left: -24px;
+        left: -45%;
+
         position: relative;
         margin-top: 120px;
     }
