@@ -231,6 +231,10 @@ select {
     float: right;
     width :10vw;
 }
+.responsetext{
+    font-weight: normal;
+    margin-bottom: .5vh;
+}
 
 button,
 html input[type="button"],
@@ -7308,7 +7312,8 @@ display:none;
         border-radius: 10px;
         /*width: auto;*/
         position: relative;
-        margin-left: -10%;
+        margin-left: 5%;
+        margin-top: -7vh;
     }
     
     .loginpagetable input {
@@ -7340,13 +7345,17 @@ display:none;
         margin-top: 120px;
     }
     .myaccountouter{
-        margin-left: -15vw;
+        margin-left: 1vw;
        width: 60vw;
        border-radius: 5%;
-       margin-top: 2vh;
+       margin-top: -4vh;
     }
     .myaccount input{
         width: 40vw;
+    }
+    .myaccount{
+        border-left: none;
+        border-right: none;
     }
 }
 
