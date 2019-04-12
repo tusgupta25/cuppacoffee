@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a656b011a21a408eb87b7bdbff50972d" Name="Diagram1">
+      <Diagram DiagramId="a656b011a21a408eb87b7bdbff50972d" Name="Diagram1" ZoomLevel="86">
         <EntityTypeShape EntityType="CuppaDBModel.customer" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
         <EntityTypeShape EntityType="CuppaDBModel.drink_sizes" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
         <EntityTypeShape EntityType="CuppaDBModel.order" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />

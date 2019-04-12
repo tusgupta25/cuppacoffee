@@ -7,22 +7,3 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MVCLogin
-{
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-    public partial class User
-    {
-        public string customer_firstname { get; set; }
-        public string customer_lastname { get; set; }
-        public DateTime? customer_DOB { get; set; }
-        public int? customer_phonenumber { get; set; }
-        [Required(ErrorMessage = "Please provide Email", AllowEmptyStrings = false)]
-        public string customer_email { get; set; }
-        [Required(ErrorMessage = "Please provide Password", AllowEmptyStrings = false)]
-        [DataType(System.ComponentModel.DataAnnotations.DataType.Password)]
-        public string customer_password { get; set; }
-    }
-}
