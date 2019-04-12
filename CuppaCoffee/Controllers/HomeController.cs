@@ -31,14 +31,14 @@ namespace CuppaCoffee.Controllers
         {
             return View();
         }
-        public ActionResult Login(MVCLogin.User u)
+        public ActionResult Login(CuppaCoffee.customer c)
         {
             // this action is for handle post (login)
             if (ModelState.IsValid) // this is check validity
             {
                 using (CuppaDBEntities dc = new CuppaDBEntities())
                 {
-                    var v = dc.customers.Where(a => a.customer_email.Equals(u.customer_email) && a.customer_password.Equals(u.customer_password)).FirstOrDefault();
+                    var v = dc.customers.Where(a => a.customer_email.Equals(c.customer_email) && a.customer_password.Equals(c.customer_password)).FirstOrDefault();
                     if (v != null)
                     {
                         Session["LoggedUserID"] = v.customer_email.ToString();
@@ -64,7 +64,7 @@ namespace CuppaCoffee.Controllers
                     }
                 }
             }
-            return View(u);
+            return View(c);
         }
     }
 }
