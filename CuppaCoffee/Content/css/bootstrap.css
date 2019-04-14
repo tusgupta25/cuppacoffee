@@ -236,6 +236,7 @@ select {
     margin-bottom: .5vh;
 }
 
+
 button,
 html input[type="button"],
 input[type="reset"],
@@ -4794,6 +4795,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     vertical-align: top;
     border-right: 1em double #6f4e37;
     border-collapse: collapse;
+    
 }
 #newContentbg {
     width: 96.5vw;
