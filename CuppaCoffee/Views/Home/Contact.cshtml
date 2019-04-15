@@ -1,257 +1,277 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<div class=" container myaccountouter">
+<div class="container myaccountouter">
     <br />
     <br />
-    <form class="myaccount">
-        <h2>Order</h2>
-        <div id="firstRowOrder">
-            <div class="row">
-                <div>
-                    <img />
-                </div>
-                <div>
-                    <label for="blackCoffee">Black Coffee</label>
-                </div>
-                <div>
-                    <select>
-                        <option value="0">Select Roast</option>
-                        <option value="1">Blonde</option>
-                        <option value="2">Dark</option>
-                        <option value="3">Breakfast</option>
-                    </select>
-                </div>
-                <div>
-                    <select>
-                        <option value="0">Select Milk</option>
-                        <option value="1">No Milk</option>
-                        <option value="2">Whole Milk</option>
-                        <option value="3">2%</option>
-                        <option value="4">Almond Milk</option>
-                    </select>
-                </div>
-                <div>
-                    <select>
-                        <option value="0">Select Flavor</option>
-                        <option value="1">Vanilla</option>
-                        <option value="2">Hazelnut</option>
-                        <option value="3">Caramel</option>
-                        <option value="4">Mocha</option>
-                    </select>
-                </div>
-                <select>
-                    <option value="0">Select Size</option>
-                    <option value="1">Small</option>
-                    <option value="2">Medium</option>
-                    <option value="3">Large</option>
-                </select>
-            </div>
-            <div class="row">
-                <div>
-                    <img />
-                </div>
-                <div>
-                    <label for="Cappucino">Cappucino</label>
-                </div>
+<div class="myaccount">
+    <h2>Order</h2>
+    <table class="ordertable">
+        <tr id="firstRowOrder">
+            <td>
+                @*<div class="row">*@
+                    <div>
+                        <img src="~/images/black coffee.png" />
+                    </div>
+                    <div>
+                        <label for="blackCoffee">Black Coffee</label>
+                    </div>
+                    <div>
+                        <select>
+                            <option value="0">Select Roast</option>
+                            <option value="1">Blonde</option>
+                            <option value="2">Dark</option>
+                            <option value="3">Breakfast</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select>
+                            <option value="0">Select Milk</option>
+                            <option value="1">No Milk</option>
+                            <option value="2">Whole Milk</option>
+                            <option value="3">2%</option>
+                            <option value="4">Almond Milk</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select>
+                            <option value="0">Select Flavor</option>
+                            <option value="1">Vanilla</option>
+                            <option value="2">Hazelnut</option>
+                            <option value="3">Caramel</option>
+                            <option value="4">Mocha</option>
+                        </select>
+                    </div>
                 <div>
                     <select>
-                        <option value="0">Select Roast</option>
-                        <option value="1">Blonde</option>
-                        <option value="2">Dark</option>
-                        <option value="3">Breakfast</option>
+                        <option value="0">Select Size</option>
+                        <option value="1">Small</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Large</option>
                     </select>
                 </div>
+            </td>
+            <td>
+                @*<div class="row">*@
+                    <div>
+                        <img src="~/images/Cappuccino.png" />
+                    </div>
+                    <div>
+                        <label for="Cappuccino">Cappuccino</label>
+                    </div>
+                    <div>
+                        <select>
+                            <option value="0">Select Roast</option>
+                            <option value="1">Blonde</option>
+                            <option value="2">Dark</option>
+                            <option value="3">Breakfast</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select>
+                            <option value="0">Select Milk</option>
+                            <option value="1">No Milk</option>
+                            <option value="2">Whole Milk</option>
+                            <option value="3">2%</option>
+                            <option value="4">Almond Milk</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select>
+                            <option value="0">Select Flavor</option>
+                            <option value="1">Vanilla</option>
+                            <option value="2">Hazelnut</option>
+                            <option value="3">Caramel</option>
+                            <option value="4">Mocha</option>
+                        </select>
+                    </div>
                 <div>
                     <select>
-                        <option value="0">Select Milk</option>
-                        <option value="1">No Milk</option>
-                        <option value="2">Whole Milk</option>
-                        <option value="3">2%</option>
-                        <option value="4">Almond Milk</option>
+                        <option value="0">Select Size</option>
+                        <option value="1">Small</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Large</option>
                     </select>
                 </div>
+            </td>
+            <td>
+                @*<div class="row">*@
+                    <div>
+                        <img src="~/images/latte.png" />
+                    </div>
+                    <div>
+                        <label for="Latte">Lattes</label>
+                    </div>
+                    <div>
+                        <select>
+                            <option value="0">Select Roast</option>
+                            <option value="1">Blonde</option>
+                            <option value="2">Dark</option>
+                            <option value="3">Breakfast</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select>
+                            <option value="0">Select Milk</option>
+                            <option value="1">No Milk</option>
+                            <option value="2">Whole Milk</option>
+                            <option value="3">2%</option>
+                            <option value="4">Almond Milk</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select>
+                            <option value="0">Select Flavor</option>
+                            <option value="1">Vanilla</option>
+                            <option value="2">Hazelnut</option>
+                            <option value="3">Caramel</option>
+                            <option value="4">Mocha</option>
+                        </select>
+                    </div>
                 <div>
                     <select>
-                        <option value="0">Select Flavor</option>
-                        <option value="1">Vanilla</option>
-                        <option value="2">Hazelnut</option>
-                        <option value="3">Caramel</option>
-                        <option value="4">Mocha</option>
+                        <option value="0">Select Size</option>
+                        <option value="1">Small</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Large</option>
                     </select>
                 </div>
-                <select>
-                    <option value="0">Select Size</option>
-                    <option value="1">Small</option>
-                    <option value="2">Medium</option>
-                    <option value="3">Large</option>
-                </select>
-            </div>
-            <div class="row">
+            </td>
+        </tr>
+        <tr id="secondRowOrder">
+            <td>
+                    @*<div class="row">*@
+                        <div>
+                            <img src="~/images/americano.png" />
+                        </div>
+                        <div>
+                            <label for="Americano">Americano</label>
+                        </div>
+                        <div>
+                            <select>
+                                <option value="0">Select Roast</option>
+                                <option value="1">Blonde</option>
+                                <option value="2">Dark</option>
+                                <option value="3">Breakfast</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select>
+                                <option value="0">Select Milk</option>
+                                <option value="1">No Milk</option>
+                                <option value="2">Whole Milk</option>
+                                <option value="3">2%</option>
+                                <option value="4">Almond Milk</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select>
+                                <option value="0">Select Flavor</option>
+                                <option value="1">Vanilla</option>
+                                <option value="2">Hazelnut</option>
+                                <option value="3">Caramel</option>
+                                <option value="4">Mocha</option>
+                            </select>
+                        </div>
                 <div>
-                    <img />
-                </div>
-                <div>
-                    <label for="Latte">Lattes</label>
-                </div>
+                        <select>
+                            <option value="0">Select Size</option>
+                            <option value="1">Small</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Large</option>
+                        </select>
+                    </div>
+            </td>
+            <td>
+                @*<div class="row">*@
+                    <div>
+                        <img src="~/images/mocha.png" />
+                    </div>
+                    <div>
+                        <label for="Mocha">Mocha</label>
+                    </div>
+                    <div>
+                        <select>
+                            <option value="0">Select Roast</option>
+                            <option value="1">Blonde</option>
+                            <option value="2">Dark</option>
+                            <option value="3">Breakfast</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select>
+                            <option value="0">Select Milk</option>
+                            <option value="1">No Milk</option>
+                            <option value="2">Whole Milk</option>
+                            <option value="3">2%</option>
+                            <option value="4">Almond Milk</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select>
+                            <option value="0">Select Flavor</option>
+                            <option value="1">Vanilla</option>
+                            <option value="2">Hazelnut</option>
+                            <option value="3">Caramel</option>
+                            <option value="4">Mocha</option>
+                        </select>
+                    </div>
                 <div>
                     <select>
-                        <option value="0">Select Roast</option>
-                        <option value="1">Blonde</option>
-                        <option value="2">Dark</option>
-                        <option value="3">Breakfast</option>
+                        <option value="0">Select Size</option>
+                        <option value="1">Small</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Large</option>
                     </select>
                 </div>
+            </td>
+            <td>
+                @*<div class="row">*@
+                    <div>
+                        <img src="~/images/macchiato.png" />
+                    </div>
+                    <div>
+                        <label for="Macchiato">Macchiato</label>
+                    </div>
+                    <div>
+                        <select>
+                            <option value="0">Select Roast</option>
+                            <option value="1">Blonde</option>
+                            <option value="2">Dark</option>
+                            <option value="3">Breakfast</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select>
+                            <option value="0">Select Milk</option>
+                            <option value="1">No Milk</option>
+                            <option value="2">Whole Milk</option>
+                            <option value="3">2%</option>
+                            <option value="4">Almond Milk</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select>
+                            <option value="0">Select Flavor</option>
+                            <option value="1">Vanilla</option>
+                            <option value="2">Hazelnut</option>
+                            <option value="3">Caramel</option>
+                            <option value="4">Mocha</option>
+                        </select>
+                    </div>
                 <div>
                     <select>
-                        <option value="0">Select Milk</option>
-                        <option value="1">No Milk</option>
-                        <option value="2">Whole Milk</option>
-                        <option value="3">2%</option>
-                        <option value="4">Almond Milk</option>
+                        <option value="0">Select Size</option>
+                        <option value="1">Small</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Large</option>
                     </select>
                 </div>
-                <div>
-                    <select>
-                        <option value="0">Select Flavor</option>
-                        <option value="1">Vanilla</option>
-                        <option value="2">Hazelnut</option>
-                        <option value="3">Caramel</option>
-                        <option value="4">Mocha</option>
-                    </select>
-                </div>
-                <select>
-                    <option value="0">Select Size</option>
-                    <option value="1">Small</option>
-                    <option value="2">Medium</option>
-                    <option value="3">Large</option>
-                </select>
-            </div>
-        </div>
-        <div id="secondRowOrder">
-            <div class="row">
-                <div>
-                    <img />
-                </div>
-                <div>
-                    <label for="Americano">Americano</label>
-                </div>
-                <div>
-                    <select>
-                        <option value="0">Select Roast</option>
-                        <option value="1">Blonde</option>
-                        <option value="2">Dark</option>
-                        <option value="3">Breakfast</option>
-                    </select>
-                </div>
-                <div>
-                    <select>
-                        <option value="0">Select Milk</option>
-                        <option value="1">No Milk</option>
-                        <option value="2">Whole Milk</option>
-                        <option value="3">2%</option>
-                        <option value="4">Almond Milk</option>
-                    </select>
-                </div>
-                <div>
-                    <select>
-                        <option value="0">Select Flavor</option>
-                        <option value="1">Vanilla</option>
-                        <option value="2">Hazelnut</option>
-                        <option value="3">Caramel</option>
-                        <option value="4">Mocha</option>
-                    </select>
-                </div>
-                <select>
-                    <option value="0">Select Size</option>
-                    <option value="1">Small</option>
-                    <option value="2">Medium</option>
-                    <option value="3">Large</option>
-                </select>
-            </div>
-            <div class="row">
-                <div>
-                    <img />
-                </div>
-                <div>
-                    <label for="Mocha">Mocha</label>
-                </div>
-                <div>
-                    <select>
-                        <option value="0">Select Roast</option>
-                        <option value="1">Blonde</option>
-                        <option value="2">Dark</option>
-                        <option value="3">Breakfast</option>
-                    </select>
-                </div>
-                <div>
-                    <select>
-                        <option value="0">Select Milk</option>
-                        <option value="1">No Milk</option>
-                        <option value="2">Whole Milk</option>
-                        <option value="3">2%</option>
-                        <option value="4">Almond Milk</option>
-                    </select>
-                </div>
-                <div>
-                    <select>
-                        <option value="0">Select Flavor</option>
-                        <option value="1">Vanilla</option>
-                        <option value="2">Hazelnut</option>
-                        <option value="3">Caramel</option>
-                        <option value="4">Mocha</option>
-                    </select>
-                </div>
-                <select>
-                    <option value="0">Select Size</option>
-                    <option value="1">Small</option>
-                    <option value="2">Medium</option>
-                    <option value="3">Large</option>
-                </select>
-            </div>
-            <div class="row">
-                <div>
-                    <img />
-                </div>
-                <div>
-                    <label for="Macchiato">Macchiato</label>
-                </div>
-                <div>
-                    <select>
-                        <option value="0">Select Roast</option>
-                        <option value="1">Blonde</option>
-                        <option value="2">Dark</option>
-                        <option value="3">Breakfast</option>
-                    </select>
-                </div>
-                <div>
-                    <select>
-                        <option value="0">Select Milk</option>
-                        <option value="1">No Milk</option>
-                        <option value="2">Whole Milk</option>
-                        <option value="3">2%</option>
-                        <option value="4">Almond Milk</option>
-                    </select>
-                </div>
-                <div>
-                    <select>
-                        <option value="0">Select Flavor</option>
-                        <option value="1">Vanilla</option>
-                        <option value="2">Hazelnut</option>
-                        <option value="3">Caramel</option>
-                        <option value="4">Mocha</option>
-                    </select>
-                </div>
-                <select>
-                    <option value="0">Select Size</option>
-                    <option value="1">Small</option>
-                    <option value="2">Medium</option>
-                    <option value="3">Large</option>
-                </select>
-            </div>
-        </div>
-    </form>
-    <br/>
-    <br/>
-       
+            </td>
+        </tr>
+    </table>
+    </div>
+    <br />
+    <br />
+
 </div>

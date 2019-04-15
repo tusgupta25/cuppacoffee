@@ -235,7 +235,10 @@ select {
     font-weight: normal;
     margin-bottom: .5vh;
 }
-
+.menuPicture{
+    border-radius: 20%;
+    border: black;
+}
 
 button,
 html input[type="button"],
