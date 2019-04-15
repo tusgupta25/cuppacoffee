@@ -239,6 +239,12 @@ select {
     border-radius: 20%;
     border: black;
 }
+.myaccount .ordertable{
+    margin-left: 10vw;
+}
+.myaccount .ordertable td{
+    padding: 5vh;
+}
 
 button,
 html input[type="button"],
