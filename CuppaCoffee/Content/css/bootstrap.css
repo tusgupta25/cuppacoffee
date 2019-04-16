@@ -239,10 +239,7 @@ select {
     font-weight: normal;
     margin-bottom: .5vh;
 }
-.menuPicture{
-    border-radius: 20%;
-    border: black;
-}
+
 .myaccount .ordertable{
     margin-left: 10vw;
 }
@@ -7280,8 +7277,6 @@ a.list-group-item:focus {
             font-size: 4em;
 
         }
-
-
         
 .logincheckout > p {
 display:none;
@@ -7362,7 +7357,6 @@ display:none;
         width: 50vw;
         float: right;
         left: -45%;
-
         position: relative;
         margin-top: 120px;
     }
@@ -7378,6 +7372,44 @@ display:none;
     .myaccount{
         border-left: none;
         border-right: none;
+    }
+    .myaccount .ordertable{
+        margin-left: 0vw;
+    }
+   .myaccount .ordertable td{
+
+   }
+    /*#firstRowOrder{
+        position: absolute;
+        z-index: 1;
+    }
+    #secondRowOrder {
+        position: absolute;
+        z-index: 2;
+        float: right;
+        clear: both;
+    }
+    #foodOrder {
+        position: absolute;
+        z-index: 3;
+        float: right;
+        clear: both;
+    }
+    #orderButton {
+        position: absolute;
+        z-index: 4;
+        float: right;
+        clear: both;
+    }*/
+    .ordertable td {
+        position: relative;
+        float: right;
+    }
+    #foodOrder td{
+        margin-bottom: -3vh;
+    }
+    #orderButton button{
+        padding: 1vh;
     }
 }
 
