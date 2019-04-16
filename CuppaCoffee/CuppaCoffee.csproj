@@ -207,12 +207,15 @@
     <Content Include="images\americano.png" />
     <Content Include="images\black coffee.png" />
     <Content Include="images\Cappuccino.png" />
+    <Content Include="images\croissant.png" />
     <Content Include="images\justcup.png" />
     <Content Include="images\latte.png" />
     <Content Include="images\macchiato.png" />
     <Content Include="images\mascot.png" />
     <Content Include="images\mocha.png" />
+    <Content Include="images\muffin.png" />
     <Content Include="images\sad kb.png" />
+    <Content Include="images\scones.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
