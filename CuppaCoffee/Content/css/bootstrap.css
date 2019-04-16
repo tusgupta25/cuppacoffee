@@ -210,14 +210,15 @@ select {
     .myaccount h2 {
         font-family: "Lucida Calligraphy";
     }
-
-    .myaccount input{
-        width: 200vw;
-        height: 7vh;
-        margin-top: 2vh;
+    .myaccount input {
+        height: 1em;
+        width: 5vw
+        /*margin-top: 2vh;
         border-radius: 10%;
-        color: black;
+        color: black;*/
     }
+  
+      
 .myaccountouter {
     background-color: #54230A;
     width: auto;
@@ -228,8 +229,11 @@ select {
 }
 
 .myaccount img {
-    float: right;
     width :10vw;
+}
+#userpageImage {
+    float: right;
+    width: 10vw;
 }
 .responsetext{
     font-weight: normal;
@@ -245,6 +249,13 @@ select {
 .myaccount .ordertable td{
     padding: 5vh;
 }
+.myaccount button {
+    color: #6f4e37;
+    padding: 5vh;
+    box-shadow: 2px 2px 4px 5px #6f4e37;
+    border: #6f4e37;
+}
+
 
 button,
 html input[type="button"],
