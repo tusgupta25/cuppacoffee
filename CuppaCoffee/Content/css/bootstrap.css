@@ -420,6 +420,9 @@ textarea {
     border-spacing:1vw;
  
 }
+#logindetails >tr,td{
+    vertical-align:central;
+}
 .signupsheet {
     font-family: sans-serif;
     font-weight: bold;
@@ -4815,7 +4818,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     /*border-collapse: collapse;*/
     
 }
-    #Contentbg > td,tr{
+    #newContentbg > td,tr{
         vertical-align:top;
     }
     #newContentbg {
@@ -4845,7 +4848,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     border-collapse: collapse;
 
 }
-
+/*sumit order items for checkout page*/
 #orderitems {
 
     vertical-align: top;
@@ -7232,15 +7235,11 @@ a.list-group-item:focus {
         display: none;
     }
     #newContentbg {
-
+        width:40vw;
         border-radius: 10px;
-        float: right;
-        margin-left: -45%;
+        
         position: absolute;
-        margin-top: 20%;
-
-
-
+        margin-top: 0%;
     }
     #Contentbg{
         display:none;
@@ -7252,6 +7251,19 @@ a.list-group-item:focus {
         position: absolute;
         right: 2vw;*/
     }
+    /*order items view for mobile sumit*/
+    #orderitems {
+        vertical-align: top;
+        width: 40vw;
+        height: auto;
+        margin-left: 2%;
+        text-align: center;
+        border: 1px solid blanchedalmond;
+   
+    }
+        #orderitems > td {
+            display: block;
+        }
     .mascotmobile {
         display:inline-block;
         float: right;
@@ -7354,13 +7366,15 @@ display:none;
         width: 75%;
     }
     .logindetails tr{
+       
         text-align: center;
     }
-
-    #logindetails {
+    
+    #logindetails >tr{
         /*margin-bottom: 15vh;
         margin-top: 0;
         margin-left: auto;*/
+        vertical-align:central;
         position: absolute;
         margin-top: -150px;
     }
