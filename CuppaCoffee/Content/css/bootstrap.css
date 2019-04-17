@@ -253,6 +253,9 @@ select {
     box-shadow: 2px 2px 4px 5px #6f4e37;
     border: #6f4e37;
 }
+#latte{
+    padding-top: 12vh;
+}
 
 
 button,
