@@ -10,6 +10,7 @@ namespace CuppaCoffee.Controllers
     {
         public ActionResult Index()
         {
+            
             return View();
         }
 
@@ -18,6 +19,19 @@ namespace CuppaCoffee.Controllers
             ViewBag.Message = "Your application description page.";
 
             return View();
+        }
+
+        public ActionResult Checkout()
+        {
+            if (this.Session.Count>0)
+            {
+                return View("CheckoutPage");
+
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
         }
 
         public ActionResult Contact()
