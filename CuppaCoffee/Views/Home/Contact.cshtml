@@ -1,5 +1,28 @@
 ﻿@{
     ViewBag.Title = "Contact";
+
+    List<SelectListItem> l1 = new List<SelectListItem>();
+    l1.Add(new SelectListItem() { Text = "Blonde", Value = "1" });
+    l1.Add(new SelectListItem() { Text = "Dark", Value = "2" });
+    l1.Add(new SelectListItem() { Text = "Breakfast", Value = "3" });
+
+    List<SelectListItem> l2 = new List<SelectListItem>();
+    l2.Add(new SelectListItem() { Text = "No milk", Value = "1" });
+    l2.Add(new SelectListItem() { Text = "Whole Milk", Value = "2" });
+    l2.Add(new SelectListItem() { Text = "2%", Value = "3" });
+    l2.Add(new SelectListItem() { Text = "Almond", Value = "4" });
+
+    List<SelectListItem> l3 = new List<SelectListItem>();
+    l3.Add(new SelectListItem() { Text = "Vanilla", Value = "1" });
+    l3.Add(new SelectListItem() { Text = "Caramel", Value = "2" });
+    l3.Add(new SelectListItem() { Text = "Hazelnut", Value = "3" });
+    l3.Add(new SelectListItem() { Text = "Mocha", Value = "4" });
+
+    List<SelectListItem> l4 = new List<SelectListItem>();
+    l4.Add(new SelectListItem() { Text = "Small", Value = "1" });
+    l4.Add(new SelectListItem() { Text = "Medium", Value = "2" });
+    l4.Add(new SelectListItem() { Text = "Large", Value = "3" });
+
 }
 <div class="container myaccountouter">
     <br />
@@ -17,38 +40,42 @@
                     <label for="blackCoffee">Black Coffee</label>
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Roast</option>
-                        <option value="1">Blonde</option>
-                        <option value="2">Dark</option>
-                        <option value="3">Breakfast</option>
-                    </select>
+                    @Html.DropDownList("RoastList", l1, "Pick a roast")
+                    @*<select>
+            <option value="0">Select Roast</option>
+            <option value="1">Blonde</option>
+            <option value="2">Dark</option>
+            <option value="3">Breakfast</option>
+        </select>*@
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Milk</option>
-                        <option value="1">No Milk</option>
-                        <option value="2">Whole Milk</option>
-                        <option value="3">2%</option>
-                        <option value="4">Almond Milk</option>
-                    </select>
+                    @Html.DropDownList("MilkList", l2, "Pick a milk type")
+                    @*<select>
+            <option value="0">Select Milk</option>
+            <option value="1">No Milk</option>
+            <option value="2">Whole Milk</option>
+            <option value="3">2%</option>
+            <option value="4">Almond Milk</option>
+        </select>*@
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Flavor</option>
-                        <option value="1">Vanilla</option>
-                        <option value="2">Hazelnut</option>
-                        <option value="3">Caramel</option>
-                        <option value="4">Mocha</option>
-                    </select>
+                    @Html.DropDownList("FlavorList", l3, "Pick a flavor")
+                    @*<select>
+            <option value="0">Select Flavor</option>
+            <option value="1">Vanilla</option>
+            <option value="2">Hazelnut</option>
+            <option value="3">Caramel</option>
+            <option value="4">Mocha</option>
+        </select>*@
                 </div>
                 <div>
-                    <select>
+                    @Html.DropDownList("SizeList", l4, "Pick a size")
+                    @*<select>
                         <option value="0">Select Size</option>
                         <option value="1">Small</option>
                         <option value="2">Medium</option>
                         <option value="3">Large</option>
-                    </select>
+                    </select>*@
                 </div>
             </td>
             <td>
@@ -60,38 +87,42 @@
                     <label for="Cappuccino">Cappuccino</label>
                 </div>
                 <div>
-                    <select>
+                    @Html.DropDownList("RoastList", l1, "Pick a roast")
+                    @*<select>
                         <option value="0">Select Roast</option>
                         <option value="1">Blonde</option>
                         <option value="2">Dark</option>
                         <option value="3">Breakfast</option>
-                    </select>
+                    </select>*@
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Milk</option>
-                        <option value="1">No Milk</option>
-                        <option value="2">Whole Milk</option>
-                        <option value="3">2%</option>
-                        <option value="4">Almond Milk</option>
-                    </select>
+                    @Html.DropDownList("MilkList", l2, "Pick a milk type")
+                    @*<select>
+            <option value="0">Select Milk</option>
+            <option value="1">No Milk</option>
+            <option value="2">Whole Milk</option>
+            <option value="3">2%</option>
+            <option value="4">Almond Milk</option>
+        </select>*@
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Flavor</option>
-                        <option value="1">Vanilla</option>
-                        <option value="2">Hazelnut</option>
-                        <option value="3">Caramel</option>
-                        <option value="4">Mocha</option>
-                    </select>
+                    @Html.DropDownList("FlavorList", l3, "Pick a flavor")
+                    @*<select>
+            <option value="0">Select Flavor</option>
+            <option value="1">Vanilla</option>
+            <option value="2">Hazelnut</option>
+            <option value="3">Caramel</option>
+            <option value="4">Mocha</option>
+        </select>*@
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Size</option>
-                        <option value="1">Small</option>
-                        <option value="2">Medium</option>
-                        <option value="3">Large</option>
-                    </select>
+                    @Html.DropDownList("SizeList", l4, "Pick a size")
+                    @*<select>
+            <option value="0">Select Size</option>
+            <option value="1">Small</option>
+            <option value="2">Medium</option>
+            <option value="3">Large</option>
+        </select>*@
                 </div>
             </td>
             <td>
@@ -103,38 +134,42 @@
                     <label for="Latte">Latte</label>
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Roast</option>
-                        <option value="1">Blonde</option>
-                        <option value="2">Dark</option>
-                        <option value="3">Breakfast</option>
-                    </select>
+                    @Html.DropDownList("RoastList", l1, "Pick a roast")
+                    @*<select>
+            <option value="0">Select Roast</option>
+            <option value="1">Blonde</option>
+            <option value="2">Dark</option>
+            <option value="3">Breakfast</option>
+        </select>*@
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Milk</option>
-                        <option value="1">No Milk</option>
-                        <option value="2">Whole Milk</option>
-                        <option value="3">2%</option>
-                        <option value="4">Almond Milk</option>
-                    </select>
+                    @Html.DropDownList("MilkList", l2, "Pick a milk type")
+                    @*<select>
+            <option value="0">Select Milk</option>
+            <option value="1">No Milk</option>
+            <option value="2">Whole Milk</option>
+            <option value="3">2%</option>
+            <option value="4">Almond Milk</option>
+        </select>*@
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Flavor</option>
-                        <option value="1">Vanilla</option>
-                        <option value="2">Hazelnut</option>
-                        <option value="3">Caramel</option>
-                        <option value="4">Mocha</option>
-                    </select>
+                    @Html.DropDownList("FlavorList", l3, "Pick a flavor")
+                    @*<select>
+            <option value="0">Select Flavor</option>
+            <option value="1">Vanilla</option>
+            <option value="2">Hazelnut</option>
+            <option value="3">Caramel</option>
+            <option value="4">Mocha</option>
+        </select>*@
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Size</option>
-                        <option value="1">Small</option>
-                        <option value="2">Medium</option>
-                        <option value="3">Large</option>
-                    </select>
+                    @Html.DropDownList("SizeList", l4, "Pick a size")
+                    @*<select>
+            <option value="0">Select Size</option>
+            <option value="1">Small</option>
+            <option value="2">Medium</option>
+            <option value="3">Large</option>
+        </select>*@
                 </div>
             </td>
         </tr>
@@ -148,38 +183,42 @@
                     <label for="Americano">Americano</label>
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Roast</option>
-                        <option value="1">Blonde</option>
-                        <option value="2">Dark</option>
-                        <option value="3">Breakfast</option>
-                    </select>
+                    @Html.DropDownList("RoastList", l1, "Pick a roast")
+                    @*<select>
+            <option value="0">Select Roast</option>
+            <option value="1">Blonde</option>
+            <option value="2">Dark</option>
+            <option value="3">Breakfast</option>
+        </select>*@
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Milk</option>
-                        <option value="1">No Milk</option>
-                        <option value="2">Whole Milk</option>
-                        <option value="3">2%</option>
-                        <option value="4">Almond Milk</option>
-                    </select>
+                    @Html.DropDownList("MilkList", l2, "Pick a milk type")
+                    @*<select>
+            <option value="0">Select Milk</option>
+            <option value="1">No Milk</option>
+            <option value="2">Whole Milk</option>
+            <option value="3">2%</option>
+            <option value="4">Almond Milk</option>
+        </select>*@
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Flavor</option>
-                        <option value="1">Vanilla</option>
-                        <option value="2">Hazelnut</option>
-                        <option value="3">Caramel</option>
-                        <option value="4">Mocha</option>
-                    </select>
+                    @Html.DropDownList("FlavorList", l3, "Pick a flavor")
+                    @*<select>
+            <option value="0">Select Flavor</option>
+            <option value="1">Vanilla</option>
+            <option value="2">Hazelnut</option>
+            <option value="3">Caramel</option>
+            <option value="4">Mocha</option>
+        </select>*@
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Size</option>
-                        <option value="1">Small</option>
-                        <option value="2">Medium</option>
-                        <option value="3">Large</option>
-                    </select>
+                    @Html.DropDownList("SizeList", l4, "Pick a size")
+                    @*<select>
+            <option value="0">Select Size</option>
+            <option value="1">Small</option>
+            <option value="2">Medium</option>
+            <option value="3">Large</option>
+        </select>*@
                 </div>
             </td>
             <td>
@@ -191,38 +230,42 @@
                     <label for="Mocha">Mocha</label>
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Roast</option>
-                        <option value="1">Blonde</option>
-                        <option value="2">Dark</option>
-                        <option value="3">Breakfast</option>
-                    </select>
+                    @Html.DropDownList("RoastList", l1, "Pick a roast")
+                    @*<select>
+            <option value="0">Select Roast</option>
+            <option value="1">Blonde</option>
+            <option value="2">Dark</option>
+            <option value="3">Breakfast</option>
+        </select>*@
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Milk</option>
-                        <option value="1">No Milk</option>
-                        <option value="2">Whole Milk</option>
-                        <option value="3">2%</option>
-                        <option value="4">Almond Milk</option>
-                    </select>
+                    @Html.DropDownList("MilkList", l2, "Pick a milk type")
+                    @*<select>
+            <option value="0">Select Milk</option>
+            <option value="1">No Milk</option>
+            <option value="2">Whole Milk</option>
+            <option value="3">2%</option>
+            <option value="4">Almond Milk</option>
+        </select>*@
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Flavor</option>
-                        <option value="1">Vanilla</option>
-                        <option value="2">Hazelnut</option>
-                        <option value="3">Caramel</option>
-                        <option value="4">Mocha</option>
-                    </select>
+                    @Html.DropDownList("FlavorList", l3, "Pick a flavor")
+                    @*<select>
+            <option value="0">Select Flavor</option>
+            <option value="1">Vanilla</option>
+            <option value="2">Hazelnut</option>
+            <option value="3">Caramel</option>
+            <option value="4">Mocha</option>
+        </select>*@
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Size</option>
-                        <option value="1">Small</option>
-                        <option value="2">Medium</option>
-                        <option value="3">Large</option>
-                    </select>
+                    @Html.DropDownList("SizeList", l4, "Pick a size")
+                    @*<select>
+            <option value="0">Select Size</option>
+            <option value="1">Small</option>
+            <option value="2">Medium</option>
+            <option value="3">Large</option>
+        </select>*@
                 </div>
             </td>
             <td>
@@ -234,38 +277,42 @@
                     <label for="Macchiato">Macchiato</label>
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Roast</option>
-                        <option value="1">Blonde</option>
-                        <option value="2">Dark</option>
-                        <option value="3">Breakfast</option>
-                    </select>
+                    @Html.DropDownList("RoastList", l1, "Pick a roast")
+                    @*<select>
+            <option value="0">Select Roast</option>
+            <option value="1">Blonde</option>
+            <option value="2">Dark</option>
+            <option value="3">Breakfast</option>
+        </select>*@
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Milk</option>
-                        <option value="1">No Milk</option>
-                        <option value="2">Whole Milk</option>
-                        <option value="3">2%</option>
-                        <option value="4">Almond Milk</option>
-                    </select>
+                    @Html.DropDownList("MilkList", l2, "Pick a milk type")
+                    @*<select>
+            <option value="0">Select Milk</option>
+            <option value="1">No Milk</option>
+            <option value="2">Whole Milk</option>
+            <option value="3">2%</option>
+            <option value="4">Almond Milk</option>
+        </select>*@
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Flavor</option>
-                        <option value="1">Vanilla</option>
-                        <option value="2">Hazelnut</option>
-                        <option value="3">Caramel</option>
-                        <option value="4">Mocha</option>
-                    </select>
+                    @Html.DropDownList("FlavorList", l3, "Pick a flavor")
+                    @*<select>
+            <option value="0">Select Flavor</option>
+            <option value="1">Vanilla</option>
+            <option value="2">Hazelnut</option>
+            <option value="3">Caramel</option>
+            <option value="4">Mocha</option>
+        </select>*@
                 </div>
                 <div>
-                    <select>
-                        <option value="0">Select Size</option>
-                        <option value="1">Small</option>
-                        <option value="2">Medium</option>
-                        <option value="3">Large</option>
-                    </select>
+                    @Html.DropDownList("SizeList", l4, "Pick a size")
+                    @*<select>
+            <option value="0">Select Size</option>
+            <option value="1">Small</option>
+            <option value="2">Medium</option>
+            <option value="3">Large</option>
+        </select>*@
                 </div>
             </td>
         </tr>

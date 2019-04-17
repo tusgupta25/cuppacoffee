@@ -61,6 +61,7 @@ html {
 body {
   margin: 0;
 
+
 }
 
 a:focus {
@@ -439,6 +440,7 @@ textarea {
     height: 62vh;
     text-align: center;
     padding-left: 5%;
+ 
 
 }
 
@@ -7224,6 +7226,7 @@ a.list-group-item:focus {
 
 
 
+
     }
     #Contentbg{
         display:none;
@@ -7275,7 +7278,6 @@ a.list-group-item:focus {
         #addressbg strong{
             margin: auto;
             font-size: 4em;
-
         }
         
 .logincheckout > p {
@@ -7410,6 +7412,10 @@ display:none;
     }
     #orderButton button{
         padding: 1vh;
+    }
+    .myaccount .ordertable td{
+        padding-left: 1.5vh;
+        padding-bottom: 2vh;
     }
 }
 
