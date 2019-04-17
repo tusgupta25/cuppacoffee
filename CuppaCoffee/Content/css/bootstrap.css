@@ -4799,6 +4799,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 /*content backgrounds sumit*/
 #Contentbg {
+    vertical-align:top;
     width: 96.5vw;
     min-width: 500px;
     height: auto;
@@ -4811,27 +4812,31 @@ textarea.input-group-sm > .input-group-btn > .btn {
     display: inline-block;
     vertical-align: top;
     border-right: 1em double #6f4e37;
-    border-collapse: collapse;
+    /*border-collapse: collapse;*/
     
 }
-#newContentbg {
-    width: 96.5vw;
-    min-width: 500px;
-    height: auto;
-    word-break: break-word;
-    background-color: #54230A;
-    color: blanchedalmond;
-    font-size: 1.1em;
-    font-family: sans-serif, 'Times New Roman', 'Times New Roman';
-    text-align: justify;
-    display: inline-block;
-    vertical-align: top;
-    border-right: 1em double #6f4e37;
-    border-collapse: collapse;
-}
+    #Contentbg > td,tr{
+        vertical-align:top;
+    }
+    #newContentbg {
+        width: 96.5vw;
+        min-width: 500px;
+        height: auto;
+        word-break: break-word;
+        background-color: #54230A;
+        color: blanchedalmond;
+        font-size: 1.1em;
+        font-family: sans-serif, 'Times New Roman', 'Times New Roman';
+        text-align: justify;
+        display: inline-block;
+        vertical-align: top;
+        border-right: 1em double #6f4e37;
+        border-collapse: collapse;
+    }
 
 /*about.cshtml table for addresses*/
 #addressbg {
+    vertical-align:top;
     min-width: 66vw;
     height:auto;
     margin-left:2%;
@@ -4839,6 +4844,18 @@ textarea.input-group-sm > .input-group-btn > .btn {
     border-left: 1em double #6f4e37;
     border-collapse: collapse;
 
+}
+
+#orderitems {
+
+    vertical-align: top;
+    width:63vw;
+    height: auto;
+    margin-left: 2%;
+    text-align: center;
+    border:1px solid blanchedalmond;
+    
+    border-collapse:unset;
 }
 /*for Our origin text*/
 

@@ -12,23 +12,37 @@
         </td>
 
         <td>
-            <table id="addressbg">
+            <table id="orderitems">
                 <tr>
 
                     <td class="index_text">
                         <h2>Your order</h2>
-                        
                     </td>
-                    <td><img src="~/images/mascot.png" alt="Mr. Kingbread" class="mascot" /></td>
-
                 </tr>
                 <tr>
-                    <td class="index_text">
-                        <h2>Variety at Cuppa</h2>
-                        We at Cuppa coffee have always focused on serving a wide customer group. From the teens to the greats,
-                        you'll find taste and quality in all our handcrafted beverages. Not to mention, our food is also excellent.
-                    </td>
-                </tr>
+                    
+                       
+                            @for (var i = 1; i < 5; i++)
+    {
+                        <tr>
+                            <td>
+                                <img src="~/images/black coffee.png" height="20px" width="20px" />&nbsp;<text>Name of the coffee</text>
+                                
+                            </td>
+                            <td>
+                                <p>Size</p>
+                            </td>
+                            <td>
+                                <p>$5</p>
+                            </td>
+                        </tr>
+}
+                    
+                        
+                 </tr>
+    <tr>
+        <td></td>
+    </tr>
             </table>
 
         </td>
