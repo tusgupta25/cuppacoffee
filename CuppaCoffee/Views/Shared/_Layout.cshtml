@@ -20,7 +20,7 @@
                 @if (Session["LoggedUserID"] != null)
                 {
                     <p>@Html.ActionLink("My Account", "UserPage", "Home")</p>
-                    <p>@Html.ActionLink("Checkout", "Login", "Home")</p>
+                    <p>@Html.ActionLink("Checkout", "CheckoutPage", "Home")</p>
                     <p>@Html.ActionLink("Logout", "Logout", "Home")</p>
                 }
                 else
