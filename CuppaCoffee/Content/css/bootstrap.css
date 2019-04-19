@@ -7463,8 +7463,12 @@ display:none;
         width: 60vw;
         padding-right: 2%;
     }
-
-
+    #money{
+        width: 5vw;
+    }
+    #orderitems #orderButton{
+        margin-right: 50vw;
+    }
 }
 
 
