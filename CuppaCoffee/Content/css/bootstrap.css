@@ -7450,7 +7450,9 @@ display:none;
         margin-bottom: -3vh;
     }
     #orderButton button{
-        padding: 1vh;
+        padding:.5vh;
+        width: 15vh;
+
     }
     .myaccount .ordertable td{
         padding-left: 1.5vh;
