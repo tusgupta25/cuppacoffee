@@ -253,7 +253,14 @@ select {
     box-shadow: 2px 2px 4px 5px #6f4e37;
     border: #6f4e37;
 }
-#latte{
+#orderitems button {
+    color: #6f4e37;
+    padding: 2vh;
+    box-shadow: 2px 2px 4px 5px #6f4e37;
+    border: #6f4e37;
+    margin-bottom: 2vh;
+}
+#latte {
     padding-top: 12vh;
 }
 
