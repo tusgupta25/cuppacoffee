@@ -3,31 +3,30 @@
     ViewBag.Title = "CheckoutPage";
 }
 
-<h2>CheckoutPage</h2>
+@using (Html.BeginForm("Contact", "Home", FormMethod.Post))
 
-<table id="Contentbg">
-    <tr>
-        <td class="gifcontainer">
-            <img src="~/images/coffee_steam.gif" id="thegif" />
-        </td>
+{
+    <table id="newContentbg">
+        <tr>
+            <td class="gifcontainer">
+                <img src="~/images/coffee_steam.gif" id="thegif" />
+            </td>
 
-        <td>
-            <table id="orderitems">
-                <tr>
+            <td>
+                <table id="orderitems">
+                    <tr>
 
-                    <td class="index_text">
-                        <h2>Your order</h2>
-                    </td>
-                </tr>
-                <tr>
-                    
-                       
-                            @for (var i = 1; i < 5; i++)
-    {
+                        <td class="index_text">
+                            <h2>Your order</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        @for (var i = 1; i < 5; i++)
+                        {
                         <tr>
                             <td>
                                 <img src="~/images/black coffee.png" height="20px" width="20px" />&nbsp;<text>Name of the coffee</text>
-                                
+
                             </td>
                             <td>
                                 <p>Size</p>
@@ -36,15 +35,16 @@
                                 <p>$5</p>
                             </td>
                         </tr>
-}
-                    
-                        
-                 </tr>
-    <tr>
-        <td></td>
-    </tr>
-            </table>
+                        }
+            </tr>
+        <tr>
+            <td id="orderButton"><button>Continue Shopping</button></td>
+            
+            <td id="orderButton"><button><a href="https://www.paypal.com/us/home">Checkout</a></button></td>
+        </tr>
+        </table>
 
         </td>
 
-</table>
+        </table>
+}

@@ -253,7 +253,14 @@ select {
     box-shadow: 2px 2px 4px 5px #6f4e37;
     border: #6f4e37;
 }
-#latte{
+#orderitems button {
+    color: #6f4e37;
+    padding: 2vh;
+    box-shadow: 2px 2px 4px 5px #6f4e37;
+    border: #6f4e37;
+    margin-bottom: 2vh;
+}
+#latte {
     padding-top: 12vh;
 }
 
@@ -423,6 +430,9 @@ textarea {
     border-radius: 5%;
     border-spacing:1vw;
  
+}
+#logindetails >tr,td{
+    vertical-align:central;
 }
 .signupsheet {
     font-family: sans-serif;
@@ -4820,7 +4830,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     /*border-collapse: collapse;*/
     
 }
-    #Contentbg > td,tr{
+    #newContentbg > td,tr{
         vertical-align:top;
     }
     #newContentbg {
@@ -4850,17 +4860,16 @@ textarea.input-group-sm > .input-group-btn > .btn {
     border-collapse: collapse;
 
 }
-
+/*sumit order items for checkout page*/
 #orderitems {
-
     vertical-align: top;
-    width:63vw;
+    width: 63vw;
     height: auto;
     margin-left: 2%;
     text-align: center;
-    border:1px solid blanchedalmond;
-    
-    border-collapse:unset;
+    border: 1px solid blanchedalmond;
+    margin-top: 18vh;
+    border-collapse: unset;
 }
 /*for Our origin text*/
 
@@ -7237,16 +7246,11 @@ a.list-group-item:focus {
         display: none;
     }
     #newContentbg {
-
+        width:40vw;
         border-radius: 10px;
-        float: right;
-        margin-left: -45%;
+        
         position: absolute;
-        margin-top: 20%;
-
-
-
-
+        margin-top: 0%;
     }
     #Contentbg{
         display:none;
@@ -7258,6 +7262,19 @@ a.list-group-item:focus {
         position: absolute;
         right: 2vw;*/
     }
+    /*order items view for mobile sumit*/
+    #orderitems {
+        vertical-align: top;
+        width: 40vw;
+        height: auto;
+        margin-left: 2%;
+        text-align: center;
+        border: 1px solid blanchedalmond;
+   
+    }
+        #orderitems > td {
+            display: block;
+        }
     .mascotmobile {
         display:inline-block;
         float: right;
@@ -7359,13 +7376,15 @@ display:none;
         width: 75%;
     }
     .logindetails tr{
+       
         text-align: center;
     }
-
-    #logindetails {
+    
+    #logindetails >tr{
         /*margin-bottom: 15vh;
         margin-top: 0;
         margin-left: auto;*/
+        vertical-align:central;
         position: absolute;
         margin-top: -150px;
     }
@@ -7437,6 +7456,13 @@ display:none;
         padding-left: 1.5vh;
         padding-bottom: 2vh;
     }
+    #orderitems{
+        margin-top: 3vh;
+        width: 60vw;
+        padding-right: 2%;
+    }
+
+
 }
 
 
