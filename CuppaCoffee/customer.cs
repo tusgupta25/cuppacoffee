@@ -23,12 +23,15 @@ namespace CuppaCoffee
     
         public string customer_firstname { get; set; }
         public string customer_lastname { get; set; }
-        [Required(ErrorMessage = "Please provide Email", AllowEmptyStrings = false)]
+        [Required(ErrorMessage = "Please provide a valid Email", AllowEmptyStrings = false)]
+        [RegularExpression(@"^([0-9a-zA-Z]([\+\-_\.][0-9a-zA-Z]+)*)+@(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]*\.)+[a-zA-Z0-9]{2,3})$",
+        ErrorMessage = "Please provide valid Email ID")]
         public string customer_email { get; set; }
         public Nullable<System.DateTime> customer_DOB { get; set; }
         public string customer_phonenumber { get; set; }
         [Required(ErrorMessage = "Please provide Password", AllowEmptyStrings = false)]
         [DataType(System.ComponentModel.DataAnnotations.DataType.Password)]
+        [StringLength(50, MinimumLength = 8, ErrorMessage = "Password must be 8 char long.")]
         public string customer_password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

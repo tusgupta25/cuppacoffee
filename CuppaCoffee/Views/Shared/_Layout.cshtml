@@ -17,10 +17,18 @@
                 @Html.ActionLink("Cuppa Coffee", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="logincheckout">
-                
-                <p>@Html.ActionLink("My Account", "Login", "Home")</p>
-                <p>@Html.ActionLink("Checkout", "Login", "Home")</p>
-               
+                @if (Session["LoggedUserID"] != null)
+                {
+                    <p>@Html.ActionLink("My Account", "UserPage", "Home")</p>
+                    <p>@Html.ActionLink("Checkout", "Login", "Home")</p>
+                    <p>@Html.ActionLink("Logout", "Logout", "Home")</p>
+                }
+                else
+                {
+                    <p>@Html.ActionLink("Login", "Login", "Home")</p>
+                }
+
+
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">

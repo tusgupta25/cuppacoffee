@@ -45,6 +45,13 @@ namespace CuppaCoffee.Controllers
         {
             return View();
         }
+
+        public ActionResult Logout()
+        {
+            Session.Abandon();
+            return RedirectToAction("Login");
+        }
+
         public ActionResult Login(CuppaCoffee.customer c)
         {
             // this action is for handle post (login)
@@ -52,29 +59,43 @@ namespace CuppaCoffee.Controllers
             {
                 using (CuppaDBEntities dc = new CuppaDBEntities())
                 {
-                    var v = dc.customers.Where(a => a.customer_email.Equals(c.customer_email) && a.customer_password.Equals(c.customer_password)).FirstOrDefault();
-                    if (v != null)
+                    if (Request.Form["Log In"] != null)
                     {
-                        Session["LoggedUserID"] = v.customer_email.ToString();
-                        Session["LoggedUserFirstname"] = v.customer_firstname.ToString();
-                        Session["LoggedUserLastName"] = v.customer_lastname.ToString();
-                        if (v.customer_phonenumber != null)
+                        var v = dc.customers.Where(a => a.customer_email.Equals(c.customer_email) && a.customer_password.Equals(c.customer_password)).FirstOrDefault();
+                        if (v != null)
                         {
-                            Session["LogedUserPhoneNumber"] = v.customer_phonenumber.ToString();
+                            Session["LoggedUserID"] = v.customer_email.ToString();
+                            Session["LoggedUserFirstname"] = v.customer_firstname.ToString();
+                            Session["LoggedUserLastName"] = v.customer_lastname.ToString();
+                            if (v.customer_phonenumber != null)
+                            {
+                                Session["LogedUserPhoneNumber"] = v.customer_phonenumber.ToString();
+                            }
+                            else
+                            {
+                                Session["LoggedUserPhoneNumber"] = "N/A".ToString();
+                            }
+                            if (v.customer_DOB != null)
+                            {
+                                Session["LoggedUserDOB"] = v.customer_DOB.ToString();
+                            }
+                            else
+                            {
+                                Session["LoggedUserDOB"] = "N/A".ToString();
+                            }
+                            return RedirectToAction("UserPage");
                         }
-                        else
-                        {
-                            Session["LoggedUserPhoneNumber"] = "N/A".ToString();
-                        }
-                        if (v.customer_DOB != null)
-                        {
-                            Session["LoggedUserDOB"] = v.customer_DOB.ToString();
-                        }
-                        else
-                        {
-                            Session["LoggedUserDOB"] = "N/A".ToString();
-                        }
-                        return RedirectToAction("UserPage");
+                    }
+                    if (Request.Form["Register"] != null)
+                    {
+                        
+                        //you should check duplicate registration here 
+                        dc.customers.Add(c);
+                        dc.SaveChanges();
+                        ModelState.Clear();
+                        c = null;
+                        ViewBag.Message = "Successfully Registered";
+                        return View(c);
                     }
                 }
             }

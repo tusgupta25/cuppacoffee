@@ -5,47 +5,48 @@
 }
 
 @*<h2>Login</h2>*@
-    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
-    {
-    @Html.AntiForgeryToken() // this is for prevent CSRF attack
-    @Html.ValidationSummary(true)
-
+    
+        
 
         <table class="loginpagetable" >
             <tr>
                 <td>
-                    <table id="logindetails" class="logindetails">
+                    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken() // this is for prevent CSRF attack
+                        @Html.ValidationSummary(true)
+                        <table id="logindetails" class="logindetails">
 
-                        <tr>
-                            <td>
-                                @Html.LabelFor(a => a.customer_email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })
-                            </td>
-                            <td>
-                                @Html.TextBoxFor(a => a.customer_email)
-                                @*<input id="loginID" type="email" placeholder="Your email ID" />*@
-                            </td>
-                            @*<td>@Html.ValidationMessageFor(a => a.customer_email)</td>*@
-                        </tr>
-                        <tr>
-                            <td>
-                                @Html.LabelFor(a => a.customer_password, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
-                                @*<text>Password</text>*@
-                            </td>
-                            <td>
-                                @Html.PasswordFor(a => a.customer_password)
-                            </td>
-                            @*<td>
-                                @Html.ValidationMessageFor(a => a.customer_password)
-                            </td>*@
-                        </tr>
-                        <tr>
-                            <td colspan="2" id="buttonthings">
-                                <center><button id="loginbutton">Sign in</button></center>
-                            </td>
-                        </tr>
-                    </table>
-
-                </td>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(a => a.customer_email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(a => a.customer_email)
+                                    @*<input id="loginID" type="email" placeholder="Your email ID" />*@
+                                </td>
+                                @*<td>@Html.ValidationMessageFor(a => a.customer_email)</td>*@
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(a => a.customer_password, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @*<text>Password</text>*@
+                                </td>
+                                <td>
+                                    @Html.PasswordFor(a => a.customer_password)
+                                </td>
+                                @*<td>
+                        @Html.ValidationMessageFor(a => a.customer_password)
+                    </td>*@
+                            </tr>
+                            <tr>
+                                <td colspan="2" id="buttonthings">
+                                    <center><input type="submit" name="Log In" value="Log In" /></center>
+                                </td>
+                            </tr>
+                        </table>
+                    }
+                    </td>
                 <td colspan="2">
                     <pre><strong>Howdy!
 
@@ -56,63 +57,77 @@
                 </td>
 
                 <td>
-                    <table id="signupsheet" class="logindetails">
+                    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken() // this is for prevent CSRF attack
+                        @Html.ValidationSummary(true)
+                        <table id="signupsheet" class="logindetails">
 
-                        <tr>
-                            <td colspan="5">
-                                <text>Not signed up yet? No problem, tell us about yourself!</text>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <text>Name</text>
-                                </td>
-                            <td>
-                                <input id="namebox" placeholder="Your name"/>
+                            <tr>
+                                <td colspan="5">
+                                    <text>Not signed up yet? No problem, tell us about yourself!</text>
                                 </td>
                             </tr>
-                        <tr>
-                            <td>
-                                <text>Gender</text>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(b => b.customer_firstname, "Firstname", htmlAttributes: new { @class = "control-label col-md-2" })
                                 </td>
-                            <td>
-                                <input id="genderbox" placeholder="male/female"/>
+                                <td>
+                                    @Html.TextBoxFor(b => b.customer_firstname)
                                 </td>
                             </tr>
-                        <tr>
-                            <td>
-                                <text>Date of birth</text>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(b => b.customer_lastname, "Lastname", htmlAttributes: new { @class = "control-label col-md-2" })
                                 </td>
-                            <td>
-                                <input id="dateofbirthbox" type="date" placeholder="yyyy/mm/dd"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <text>Email ID</text>
+                                <td>
+                                    @Html.TextBoxFor(b => b.customer_lastname)
                                 </td>
-                            <td>
-                                <input id="emailbox" type="email" placeholder="someone@example.com"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <text>Password</text>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <text>Gender</text>
                                 </td>
-                            <td>
-                                <input id="passwordbox" type="password" placeholder="your password" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <center><button id="signupbutton">Sign up</button></center>
-                            </td>
-                        </tr>
-                    </table>
+                                <td>
+                                    <input id="genderbox" placeholder="male/female" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(b => b.customer_DOB, "DOB", htmlAttributes: new { @class = "control-label col-md-2" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(b => b.customer_DOB)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(b => b.customer_email, "EmailID", htmlAttributes: new { @class = "control-label col-md-2" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(b => b.customer_email)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(b => b.customer_password, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
+                                </td>
+                                <td>
+                                    @Html.PasswordFor(b => b.customer_password)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <center><input type="submit" name="Register" value="Register" /></center>
+                                    @ViewBag.Message
+                                </td>
+                            </tr>
+                        </table>
+                    }
+               
                 </td>
             </tr>
         </table>
-    }
 
 
 @*@using (Html.BeginForm("Login", "Home", FormMethod.Post))
