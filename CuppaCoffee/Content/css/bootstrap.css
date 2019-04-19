@@ -4855,15 +4855,14 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 /*sumit order items for checkout page*/
 #orderitems {
-
     vertical-align: top;
-    width:63vw;
+    width: 63vw;
     height: auto;
     margin-left: 2%;
     text-align: center;
-    border:1px solid blanchedalmond;
-    
-    border-collapse:unset;
+    border: 1px solid blanchedalmond;
+    margin-top: 18vh;
+    border-collapse: unset;
 }
 /*for Our origin text*/
 
@@ -7450,6 +7449,13 @@ display:none;
         padding-left: 1.5vh;
         padding-bottom: 2vh;
     }
+    #orderitems{
+        margin-top: 3vh;
+        width: 60vw;
+        padding-right: 2%;
+    }
+
+
 }
 
 
