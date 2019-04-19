@@ -20,7 +20,7 @@
                 @if (Session["LoggedUserID"] != null)
                 {
                     <p>@Html.ActionLink("My Account", "UserPage", "Home")</p>
-                    <p>@Html.ActionLink("Checkout", "CheckoutPage", "Home")</p>
+                    <p>@Html.ActionLink("Checkout", "Checkout", "Home")</p>
                     <p>@Html.ActionLink("Logout", "Logout", "Home")</p>
                 }
                 else
@@ -36,8 +36,16 @@
                     <li>@Html.ActionLink("Find Us", "About", "Home")</li>
                     <li>@Html.ActionLink("Order", "Contact", "Home")</li>
                     <!--   <li id="funfact">@Html.ActionLink("Fun facts", "Login", "Home")</li>-->
-                    <li id="extralink1">@Html.ActionLink("My Account", "Login", "Home")</li>
-                    <li id="extralink2">@Html.ActionLink("Checkout", "Checkout", "Home")</li>
+                    @if (Session["LoggedUserID"] != null)
+                    {
+                        <li id="extralink1">@Html.ActionLink("My Account", "UserPage", "Home")</li>
+                        <li id="extralink2">@Html.ActionLink("Checkout", "Checkout", "Home")</li>
+                        <li id="extralink3">@Html.ActionLink("Logout", "Logout", "Home")</li>
+                    }
+                    else
+                    {
+                    <li>@Html.ActionLink("Login", "Login", "Home")</li>
+                    }
                 </ul>
             </div>
         </div>
