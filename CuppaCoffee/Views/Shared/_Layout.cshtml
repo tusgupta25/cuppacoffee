@@ -17,11 +17,12 @@
                 @Html.ActionLink("Cuppa Coffee", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="logincheckout">
-                @if(Session["isManager"] != null)
+                @if (Session["isManager"] != null)
                 {
                     if (@Session["isManager"].ToString() == "True")
                     {
                         <p>@Html.ActionLink("Inventory", "Inventory", "Home")</p>
+                        <p>@Html.ActionLink("All Orders", "AllOrders", "Home")</p>
                     }
                 }
                 @if (Session["LoggedUserID"] != null)
@@ -40,13 +41,17 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Find Us", "About", "Home")</li>
-                    <li>@Html.ActionLink("Order", "Contact", "Home")</li>
+                    @if (Session["LoggedUserID"] != null)
+                    {
+                        <li>@Html.ActionLink("Order", "Contact", "Home")</li>
+                    }
                     <!--   <li id="funfact">@Html.ActionLink("Fun facts", "Login", "Home")</li>-->
                     @if (Session["isManager"] != null)
                     {
                         if (@Session["isManager"].ToString() == "True")
                         {
                             <li id="extralink5">@Html.ActionLink("Inventory", "Inventory", "Home")</li>
+                            <li id="extralink6">@Html.ActionLink("All Orders", "AllOrders", "Home")</li>
                         }
                     }
                     @if (Session["LoggedUserID"] != null)

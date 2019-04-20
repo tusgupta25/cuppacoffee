@@ -98,6 +98,11 @@ namespace CuppaCoffee.Controllers
             return RedirectToAction("Login");
         }
 
+        public ActionResult AllOrders()
+        {
+            return View();
+        }
+
         public ActionResult Inventory()
         {
             CuppaDBEntities dc = new CuppaDBEntities();

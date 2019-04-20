@@ -4405,7 +4405,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
        display: inline-block;
     }
 
-#extralink1, #extralink2, #extralink3, #extralink4, #extralink5 {
+#extralink1, #extralink2, #extralink3, #extralink4, #extralink5, #extralink6 {
     display: none;
 }
 @media (max-width: 767px) {
@@ -7233,7 +7233,7 @@ a.list-group-item:focus {
        
         display: block;
     }
-    #extralink1, #extralink2, #extralink3, #extralink4, #extralink5 {
+    #extralink1, #extralink2, #extralink3, #extralink4, #extralink5, #extralink6 {
         display: block;
     }
     .aboutlogos {
