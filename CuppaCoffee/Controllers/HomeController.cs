@@ -60,6 +60,27 @@ namespace CuppaCoffee.Controllers
             return RedirectToAction("Login");
         }
 
+        public ActionResult Inventory()
+        {
+            CuppaDBEntities dc = new CuppaDBEntities();
+            var prods = dc.products;
+            if (Request.HttpMethod == "POST")
+            {
+                foreach (string key in Request.Form.AllKeys)
+                {
+                    if (key.StartsWith("invproduct_"))
+                    {
+                        string[] data = key.Split('_');
+                        var query = "UPDATE products set product_quantity = " + Request.Form[key] + " WHERE product_ID = " + data[1] + ";";
+                        int noOfRowUpdated = dc.Database.ExecuteSqlCommand(query);
+                    }
+                }
+                ViewBag.Message = "Successfully Updated";
+            }
+ 
+            return View();
+        }
+
         public ActionResult Login(CuppaCoffee.customer c)
         {
             // this action is for handle post (login)
@@ -75,6 +96,7 @@ namespace CuppaCoffee.Controllers
                             Session["LoggedUserID"] = v.customer_email.ToString();
                             Session["LoggedUserFirstname"] = v.customer_firstname.ToString();
                             Session["LoggedUserLastName"] = v.customer_lastname.ToString();
+                            Session["isManager"] = v.IsManager;
                             if (v.customer_phonenumber != null)
                             {
                                 Session["LogedUserPhoneNumber"] = v.customer_phonenumber.ToString();

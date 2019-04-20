@@ -6,17 +6,24 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css/bootstrap")
     @Scripts.Render("~/bundles/modernizr")
-    
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-                <a href="#" class="navbar-left"><img src="~/images/justcup.png" /></a>
+            <a href="#" class="navbar-left"><img src="~/images/justcup.png" /></a>
             <div class="navbar-header">
 
                 @Html.ActionLink("Cuppa Coffee", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="logincheckout">
+                @if(Session["isManager"] != null)
+                {
+                    if (@Session["isManager"].ToString() == "True")
+                    {
+                        <p>@Html.ActionLink("Inventory", "Inventory", "Home")</p>
+                    }
+                }
                 @if (Session["LoggedUserID"] != null)
                 {
                     <p>@Html.ActionLink("My Account", "UserPage", "Home")</p>
@@ -28,7 +35,6 @@
                     <p>@Html.ActionLink("Login", "Login", "Home")</p>
                 }
 
-
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -36,6 +42,13 @@
                     <li>@Html.ActionLink("Find Us", "About", "Home")</li>
                     <li>@Html.ActionLink("Order", "Contact", "Home")</li>
                     <!--   <li id="funfact">@Html.ActionLink("Fun facts", "Login", "Home")</li>-->
+                    @if (Session["isManager"] != null)
+                    {
+                        if (@Session["isManager"].ToString() == "True")
+                        {
+                            <li id="extralink5">@Html.ActionLink("Inventory", "Inventory", "Home")</li>
+                        }
+                    }
                     @if (Session["LoggedUserID"] != null)
                     {
                         <li id="extralink1">@Html.ActionLink("My Account", "UserPage", "Home")</li>
@@ -52,7 +65,7 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-      
+
         <footer>
             <p>&copy; @DateTime.Now.Year -Brewing since 1987</p>
             <a href="https://www.google.com">Contact Us</a>
