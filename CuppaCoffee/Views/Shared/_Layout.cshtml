@@ -40,11 +40,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Find Us", "About", "Home")</li>
-                    @if (Session["LoggedUserID"] != null)
-                    {
-                        <li>@Html.ActionLink("Order", "Contact", "Home")</li>
-                    }
+                    <li>@Html.ActionLink("Find Us", "About", "Home")</li>               
+                    <li>@Html.ActionLink("Order", "Contact", "Home")</li>
                     <!--   <li id="funfact">@Html.ActionLink("Fun facts", "Login", "Home")</li>-->
                     @if (Session["isManager"] != null)
                     {
