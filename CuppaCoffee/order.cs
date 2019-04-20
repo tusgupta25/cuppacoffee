@@ -12,23 +12,19 @@ namespace CuppaCoffee
     using System;
     using System.Collections.Generic;
     
-    public partial class order
+    public partial class Order
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public order()
-        {
-            this.order_line = new HashSet<order_line>();
-        }
-    
-        public int order_ID { get; set; }
-        public System.DateTime orderopendate { get; set; }
-        public System.DateTime orderclosedate { get; set; }
-        public string order_status { get; set; }
-        public int order_cost { get; set; }
+        public int order_id { get; set; }
+        public string product_name { get; set; }
+        public string product_type { get; set; }
+        public string drink_size { get; set; }
+        public string roast { get; set; }
+        public Nullable<int> quantity { get; set; }
+        public string flavor { get; set; }
+        public string milk { get; set; }
         public string customer_email { get; set; }
+        public string order_date { get; set; }
     
         public virtual customer customer { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<order_line> order_line { get; set; }
     }
 }

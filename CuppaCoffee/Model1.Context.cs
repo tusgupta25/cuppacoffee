@@ -27,11 +27,13 @@ namespace CuppaCoffee
     
         public virtual DbSet<customer> customers { get; set; }
         public virtual DbSet<drink_sizes> drink_sizes { get; set; }
-        public virtual DbSet<order> orders { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<order1> orders1 { get; set; }
         public virtual DbSet<product_types> product_types { get; set; }
         public virtual DbSet<product> products { get; set; }
         public virtual DbSet<drink> drinks { get; set; }
         public virtual DbSet<food> foods { get; set; }
         public virtual DbSet<order_line> order_line { get; set; }
+        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
     }
 }
