@@ -4413,7 +4413,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
        display: inline-block;
     }
 
-    #extralink1, #extralink2, #extralink3, #extralink4{display:none;}
+#extralink1, #extralink2, #extralink3, #extralink4, #extralink5 {
+    display: none;
+}
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
     position: static;
@@ -7239,8 +7241,8 @@ a.list-group-item:focus {
        
         display: block;
     }
-    #extralink1, #extralink2, #extralink3, #extralink4{
-        display:block;
+    #extralink1, #extralink2, #extralink3, #extralink4, #extralink5 {
+        display: block;
     }
     .aboutlogos {
         display: none;
