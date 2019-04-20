@@ -22,6 +22,13 @@ namespace CuppaCoffee.Controllers
             return View();
         }
 
+        public ActionResult AddToCart(CuppaCoffee.Order order)
+        {
+            ViewBag.Orders = new List<Order>();
+            ViewBag.Orders.Add(order);
+            return RedirectToAction("Checkout");
+        }
+
         public ActionResult Checkout()
         {
             if (this.Session.Count>0)
