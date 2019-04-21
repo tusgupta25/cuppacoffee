@@ -24,6 +24,20 @@ namespace CuppaCoffee.Controllers
 
         public ActionResult AddToCart(CuppaCoffee.Order order)
         {
+            if (Request.HttpMethod == "POST")
+            {
+                if (Session["order_items"] == null || (int)Session["order_items"] == 0)
+                    Session["order_items"] = 0;
+               
+                Session["order_items"] = (int)Session["order_items"] + 1;
+                int items = (int)Session["order_items"];
+
+                Session["order__" + items + "__product_name"] = Request.Form["product_name"];
+                Session["order__" + items + "__roast"] = Request.Form["roast"];
+                Session["order__" + items + "__milk"] = Request.Form["milk"];
+                Session["order__" + items + "__flavor"] = Request.Form["flavor"];
+                Session["order__" + items + "__drink_size"] = Request.Form["drink_size"];
+            }
             ViewBag.Orders = new List<Order>();
             ViewBag.Orders.Add(order);
             return RedirectToAction("Checkout");
@@ -31,8 +45,32 @@ namespace CuppaCoffee.Controllers
 
         public ActionResult Checkout()
         {
+            if (Request.HttpMethod == "POST")
+            {
+                CuppaDBEntities dc = new CuppaDBEntities();
+                int items = (int)Session["order_items"];
+                String uuid = Guid.NewGuid().ToString();
+                if (items > 0)
+                {
+                    String email = (String)Session["LoggedUserID"];
+                    for (int i = 1; i <= items; i++)
+                    {
+                        String pname = (String)Session["order__" + i + "__product_name"];
+                        String roast = (String)Session["order__" + i + "__roast"];
+                        String milk = (String)Session["order__" + i + "__milk"];
+                        String flavor = (String)Session["order__" + i + "__flavor"];
+                        String dsize = (String)Session["order__" + i + "__drink_size"];
+
+                        var query = "INSERT INTO dbo.\"Order\" (product_name, roast, milk, flavor, drink_size, order_date, customer_email, uuid) VALUES ('"+pname+"', '"+roast+"', '"+milk+"', '"+flavor+"', '"+dsize+"', GETDATE(), '"+email+"', '"+uuid+"')";
+                        System.Diagnostics.Debug.WriteLine(query);
+                        dc.Database.ExecuteSqlCommand(query);
+                    }
+                }
+                return Redirect("https://paypal.com");
+            }
             if (this.Session.Count>0)
             {
+
                 return View("CheckoutPage");
 
             }
@@ -58,6 +96,11 @@ namespace CuppaCoffee.Controllers
         {
             Session.Abandon();
             return RedirectToAction("Login");
+        }
+
+        public ActionResult AllOrders()
+        {
+            return View();
         }
 
         public ActionResult Inventory()
@@ -94,6 +137,7 @@ namespace CuppaCoffee.Controllers
                         if (v != null)
                         {
                             Session["LoggedUserID"] = v.customer_email.ToString();
+                            Session["order_items"] = 0;
                             Session["LoggedUserFirstname"] = v.customer_firstname.ToString();
                             Session["LoggedUserLastName"] = v.customer_lastname.ToString();
                             Session["isManager"] = v.IsManager;

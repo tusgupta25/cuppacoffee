@@ -7479,7 +7479,12 @@ a.list-group-item:focus {
         float: right;
         left: -100%;
         position: relative;
-        margin-top: 120px;
+        margin-top: 155px;
+    }
+    #loginButton{ 
+        margin-top: 1.5vh;
+        padding-top: .5vh;
+        width: 20vw;
     }
 
     .myaccountouter {
@@ -7599,6 +7604,18 @@ a.list-group-item:focus {
 
     th {
         font-size: 1.5vh;
+    }
+    #orderitems img{
+        display: none;
+    }
+    input[type="submit"]{
+        margin-top: 2.5vh;
+        height: 6.5vh;
+        width: auto;
+        margin-left: 1vw;
+    }
+    .orderDetail{
+      margin-left: -12vw; 
     }
 }
 
