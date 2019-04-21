@@ -62,8 +62,10 @@ namespace CuppaCoffee.Controllers
                         String dsize = (String)Session["order__" + i + "__drink_size"];
 
                         var query = "INSERT INTO dbo.\"Order\" (product_name, roast, milk, flavor, drink_size, order_date, customer_email, uuid) VALUES ('"+pname+"', '"+roast+"', '"+milk+"', '"+flavor+"', '"+dsize+"', GETDATE(), '"+email+"', '"+uuid+"')";
-                        System.Diagnostics.Debug.WriteLine(query);
                         dc.Database.ExecuteSqlCommand(query);
+                        var query1 = "UPDATE dbo.customers SET rewards = rewards + 5 WHERE customer_email = '" + email + "';";
+                        System.Diagnostics.Debug.WriteLine(query1);
+                        dc.Database.ExecuteSqlCommand(query1);
                     }
                 }
                 return Redirect("https://paypal.com");
