@@ -149,22 +149,15 @@ namespace CuppaCoffee.Controllers
                             Session["LoggedUserFirstname"] = v.customer_firstname.ToString();
                             Session["LoggedUserLastName"] = v.customer_lastname.ToString();
                             Session["isManager"] = v.IsManager;
-                            if (v.customer_phonenumber != null)
+                            if (v.Rewards != null)
                             {
-                                Session["LogedUserPhoneNumber"] = v.customer_phonenumber.ToString();
+                                Session["LoggedUserRewards"] = v.Rewards.ToString();
                             }
                             else
                             {
-                                Session["LoggedUserPhoneNumber"] = "N/A".ToString();
+                                Session["LoggedUserRewards"] = 0;
                             }
-                            if (v.customer_DOB != null)
-                            {
-                                Session["LoggedUserDOB"] = v.customer_DOB.ToString();
-                            }
-                            else
-                            {
-                                Session["LoggedUserDOB"] = "N/A".ToString();
-                            }
+                            
                             return RedirectToAction("UserPage");
                         }
                     }
