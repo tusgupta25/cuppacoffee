@@ -9,6 +9,7 @@ namespace CuppaCoffee.Controllers
 {
     public class HomeController : Controller
     {
+        [HandleError]
         public ActionResult Index()
         {
             
