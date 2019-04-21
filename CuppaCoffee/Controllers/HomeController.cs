@@ -91,7 +91,7 @@ namespace CuppaCoffee.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Select your favorite drink";
 
             return View();
         }
