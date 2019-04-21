@@ -420,16 +420,30 @@ select[multiple],
 textarea {
   background-image: none;
 }
-/*sumit login details*/
-.logindetails{
-    font-family: sans-serif;
-    font-weight:bold;
-    padding:1vw;
+/*Sumit inventory button column */
+#inventorybutton{
     background-color:khaki;
-    border:hidden gray;
+    height:9vh;
+    font-family:"Lucida Calligraphy", sans-serif;
+    font-size:1.4vw;
+}
+
+/*Sumit inventory product list*/
+#inventorylist{
+    width:40vw;
+}
+
+
+
+/*sumit login details*/
+.logindetails {
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 1vw;
+    background-color: khaki;
+    border: hidden gray;
     border-radius: 5%;
-    border-spacing:1vw;
- 
+    border-spacing: 1vw;
 }
 #logindetails >tr,td{
     vertical-align:central;
@@ -1552,10 +1566,7 @@ pre code {
   }
 }
 
-table {
-  max-width: 100%;
-  background-color: transparent;
-  }
+
 
 th {
   text-align: left;
@@ -1642,11 +1653,7 @@ table col[class*="col-"] {
   float: none;
 }
 
-table td[class*="col-"],
-table th[class*="col-"] {
-  display: table-cell;
-  float: none;
-}
+
 
 .table > thead > tr > td.active,
 .table > tbody > tr > td.active,
@@ -4808,9 +4815,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 /*content backgrounds sumit*/
 #Contentbg {
-    vertical-align:top;
+    
+    vertical-align: top;
     width: 96.5vw;
-    min-width: 500px;
+    min-width:10px;
     height: auto;
     word-break: break-word;
     background-color: #54230A;
@@ -4822,14 +4830,30 @@ textarea.input-group-sm > .input-group-btn > .btn {
     vertical-align: top;
     border-right: 1em double #6f4e37;
     /*border-collapse: collapse;*/
-    
 }
-    #newContentbg > td,tr{
-        vertical-align:top;
-    }
+
+
+#Contentbgforinventory {
+    vertical-align: top;
+    width: 96.5vw;
+    min-width: 10px;
+    height: auto;
+    word-break: break-word;
+    background-color: #54230A;
+    color: blanchedalmond;
+    font-size: 1.1em;
+    font-family: sans-serif, 'Times New Roman', 'Times New Roman';
+    text-align: justify;
+    display: inline-block;
+    vertical-align: top;
+    border-right: 1em double #6f4e37;
+}
+#newContentbg > td, tr {
+    vertical-align: top;
+}
     #newContentbg {
         width: 96.5vw;
-        min-width: 500px;
+        min-width: 10px;
         height: auto;
         word-break: break-word;
         background-color: #54230A;
@@ -7284,11 +7308,12 @@ a.list-group-item:focus {
     .body-content {
         /*border: none;*/
         /* width: 50px;*/
-       /* float: right;*/
+        /* float: right;*/
         margin-left: 45%;
         position: absolute;
         /*right: 2vw;*/
-        margin-top: 60%;
+        margin-top: 30vh;
+        font-family: "Lucida Calligraphy", sans-serif, "Times New Roman"
     }
     #addressbg h3 {
         display: none;
@@ -7327,9 +7352,10 @@ display:none;
         transition: none;
     }
     .nav {
-        font-size:1.4em;
+        font-size: 1.4em;
         margin-top: 20vh;
         position: absolute;
+        font-family: "Lucida Calligraphy", sans-serif, "Times New Roman"
     }
     .navbar-brand {
         margin-top: 5%;
@@ -7337,6 +7363,7 @@ display:none;
         font-size: 2em;
         margin-left: 20%;
         text-align: center;
+        font-family: "Lucida Calligraphy", sans-serif, "Times New Roman"
     }
     .loginpagetable strong{
         display: none;
@@ -7468,6 +7495,42 @@ display:none;
     #orderitems #orderButton{
         padding-left: 7vw;
         padding-top: 3vh;
+    }
+
+    /*Sumit's content for inventory page*/
+
+    #inventorybutton {
+        background-color: khaki;
+        height: 5vh;
+        width:15vw;
+        font-family: "Lucida Calligraphy", sans-serif;
+        font-size: 3vw;
+        display:inline;
+    }
+
+    #Contentbgforinventory {
+        vertical-align: top;
+        width: 50vw;
+        max-width:500px;
+        height: auto;
+        word-break: break-word;
+        background-color: #54230A;
+        color: blanchedalmond;
+        font-size: 1.1vh;
+        font-family: "Lucida Calligraphy", sans-serif, "Times New Roman"
+        text-align: justify;
+        
+
+    }
+    .mascot{
+        display:none;
+    }
+    h1{
+        font-size:2.5vh;
+    }
+    th{
+        font-size:1.5vh;
+
     }
 }
 

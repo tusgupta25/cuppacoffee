@@ -5,59 +5,51 @@
     var selectQueryString = "SELECT * FROM products";
 }
 
-<h2>inventory</h2>
 
-<table id="Contentbg">
-    <tr>
-        <td class="gifcontainer">
-            <img src="~/images/coffee_steam.gif" id="thegif" />
-        </td>
-        <td>
-            <h1>Inventory</h1>
-            @ViewBag.Message
-            @using (Html.BeginForm("Inventory", "Home", FormMethod.Post))
-            {
-                @Html.AntiForgeryToken() // this is for prevent CSRF attack
-                @Html.ValidationSummary(true)
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Quantity</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var row in db.Query(selectQueryString))
-                        {
+@ViewBag.Message
+@using (Html.BeginForm("Inventory", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken() // this is to prevent CSRF attack
+    @Html.ValidationSummary(true)
+    <table id="Contentbgforinventory">
+        <tr>
+            <td class="gifcontainer">
+                <img src="~/images/coffee_steam.gif" id="thegif" />
+            </td>
+            <td id="inventorylist">
+                <center>
+                    <h1>Inventory</h1>
+                    <table>
+                        <thead>
                             <tr>
-                                <td>@row.product_name</td>
-                                <td><input type="text" name="invproduct_@row.product_ID" value="@row.product_quantity" /></td>
+                                <th>Product</th>
+                                <th>Quantity</th>
 
                             </tr>
-                        }
-                    </tbody>
-                </table>
-                <input type="submit" value="Update Inventory" />
-            }
-            <!--
-    <table>
-        <tr>
-            <td>
-                <text>Pick a Product</text>
-            </td>
-            <td><select></select></td>
-        </tr>
-        <tr>
-            <td>
-                <label>Desired Value</label>
-                <input type="text" name="update">
-            </td>
-            <td><button>Update</button></td>
-        </tr>
-    </table>
-        -->
-        </td>
-    </tr>
+                        </thead>
+                        <tbody>
 
-</table>
+                            @foreach (var row in db.Query(selectQueryString))
+                    {
+                        <tr>
+                            <td>@row.product_name</td>
+                            <td><input type="text" name="invproduct_@row.product_ID" value="@row.product_quantity" /></td>
+
+                        </tr>
+            }
+
+                        </tbody>
+                    </table>
+                </center>
+            </td>
+
+            <td>
+                <img src="~/images/mascot.png" alt="Mr. Kingbread" class="mascot" />
+            
+            <input type="submit" value="Update Inventory" id="inventorybutton" />
+
+            </td>
+        </tr>
+
+    </table>
+}
