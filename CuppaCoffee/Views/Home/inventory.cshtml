@@ -30,13 +30,13 @@
                         <tbody>
 
                             @foreach (var row in db.Query(selectQueryString))
-                    {
-                        <tr>
-                            <td>@row.product_name</td>
-                            <td><input type="text" name="invproduct_@row.product_ID" value="@row.product_quantity" /></td>
+                            {
+                                <tr>
+                                    <td>@row.product_name</td>
+                                    <td><input type="text" name="invproduct_@row.product_ID" value="@row.product_quantity" /></td>
 
-                        </tr>
-            }
+                                </tr>
+                            }
 
                         </tbody>
                     </table>
@@ -45,11 +45,12 @@
 
             <td>
                 <img src="~/images/mascot.png" alt="Mr. Kingbread" class="mascot" />
-            
-            <input type="submit" value="Update Inventory" id="inventorybutton" />
+
+                <input type="submit" value="Update Inventory" id="inventorybutton" />
 
             </td>
         </tr>
 
     </table>
+    <center><input type="submit" value="Update Inventory" id="inventorybuttonmobile" /></center>
 }

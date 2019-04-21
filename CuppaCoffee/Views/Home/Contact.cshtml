@@ -2,26 +2,26 @@
     ViewBag.Title = "Contact";
 
     List<SelectListItem> l1 = new List<SelectListItem>();
-    l1.Add(new SelectListItem() { Text = "Blonde", Value = "1" });
-    l1.Add(new SelectListItem() { Text = "Dark", Value = "2" });
-    l1.Add(new SelectListItem() { Text = "Breakfast", Value = "3" });
+    l1.Add(new SelectListItem() { Text = "Blonde", Value = "Blonde" });
+    l1.Add(new SelectListItem() { Text = "Dark", Value = "Dark" });
+    l1.Add(new SelectListItem() { Text = "Breakfast", Value = "Breakfast" });
 
     List<SelectListItem> l2 = new List<SelectListItem>();
-    l2.Add(new SelectListItem() { Text = "No milk", Value = "1" });
-    l2.Add(new SelectListItem() { Text = "Whole Milk", Value = "2" });
-    l2.Add(new SelectListItem() { Text = "2%", Value = "3" });
-    l2.Add(new SelectListItem() { Text = "Almond", Value = "4" });
+    l2.Add(new SelectListItem() { Text = "No milk", Value = "No milk" });
+    l2.Add(new SelectListItem() { Text = "Whole Milk", Value = "Whole Milk" });
+    l2.Add(new SelectListItem() { Text = "2%", Value = "2%" });
+    l2.Add(new SelectListItem() { Text = "Almond", Value = "Almond" });
 
     List<SelectListItem> l3 = new List<SelectListItem>();
-    l3.Add(new SelectListItem() { Text = "Vanilla", Value = "1" });
-    l3.Add(new SelectListItem() { Text = "Caramel", Value = "2" });
-    l3.Add(new SelectListItem() { Text = "Hazelnut", Value = "3" });
-    l3.Add(new SelectListItem() { Text = "Mocha", Value = "4" });
+    l3.Add(new SelectListItem() { Text = "Vanilla", Value = "Vanilla" });
+    l3.Add(new SelectListItem() { Text = "Caramel", Value = "Caramel" });
+    l3.Add(new SelectListItem() { Text = "Hazelnut", Value = "Hazelnut" });
+    l3.Add(new SelectListItem() { Text = "Mocha", Value = "Mocha" });
 
     List<SelectListItem> l4 = new List<SelectListItem>();
-    l4.Add(new SelectListItem() { Text = "Small", Value = "1" });
-    l4.Add(new SelectListItem() { Text = "Medium", Value = "2" });
-    l4.Add(new SelectListItem() { Text = "Large", Value = "3" });
+    l4.Add(new SelectListItem() { Text = "Small", Value = "Small" });
+    l4.Add(new SelectListItem() { Text = "Medium", Value = "Medium" });
+    l4.Add(new SelectListItem() { Text = "Large", Value = "Large" });
 
 }
 @using (Html.BeginForm("AddToCart", "Home", FormMethod.Post))
@@ -30,6 +30,7 @@
         <br />
         <br />
         <div class="myaccount">
+            <br/>
             <h2>Order</h2>
             <table class="ordertable">
                 <tr id="firstRowOrder">
@@ -38,47 +39,11 @@
                         <div>
                             <img src="~/images/black coffee.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio">
                             @Html.RadioButtonFor(models=>models.product_name,"Black Coffee")
+                        </div>
+                        <div>
                             <label for="blackCoffee">Black Coffee</label>
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models=>models.roast,l1,"Pick a Roast")
-                            @*<select>
-                                    <option value="0">Select Roast</option>
-                                    <option value="1">Blonde</option>
-                                    <option value="2">Dark</option>
-                                    <option value="3">Breakfast</option>
-                                </select>*@
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.milk, l2,"Pick a milk type")
-                            @*<select>
-            <option value="0">Select Milk</option>
-            <option value="1">No Milk</option>
-            <option value="2">Whole Milk</option>
-            <option value="3">2%</option>
-            <option value="4">Almond Milk</option>
-        </select>*@
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.flavor, l3, "Pick a flavor")
-                        @*<select>
-        <option value="0">Select Flavor</option>
-        <option value="1">Vanilla</option>
-        <option value="2">Hazelnut</option>
-        <option value="3">Caramel</option>
-        <option value="4">Mocha</option>
-    </select>*@
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.drink_size,l4, "Pick a size")
-                            @*<select>
-            <option value="0">Select Size</option>
-            <option value="1">Small</option>
-            <option value="2">Medium</option>
-            <option value="3">Large</option>
-        </select>*@
                         </div>
                     </td>
                     <td>
@@ -86,47 +51,11 @@
                         <div>
                             <img src="~/images/Cappuccino.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio">
                             @Html.RadioButtonFor(models=>models.product_name,"Cappuccino coffee")
+                        </div>
+                        <div>
                             <label for="Cappuccino">Cappuccino</label>
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.roast, l1, "Pick a Roast")
-                            @*<select>
-            <option value="0">Select Roast</option>
-            <option value="1">Blonde</option>
-            <option value="2">Dark</option>
-            <option value="3">Breakfast</option>
-        </select>*@
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.milk, l2, "Pick a milk type")
-                            @*<select>
-            <option value="0">Select Milk</option>
-            <option value="1">No Milk</option>
-            <option value="2">Whole Milk</option>
-            <option value="3">2%</option>
-            <option value="4">Almond Milk</option>
-        </select>*@
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.flavor, l3, "Pick a flavor")
-                            @*<select>
-            <option value="0">Select Flavor</option>
-            <option value="1">Vanilla</option>
-            <option value="2">Hazelnut</option>
-            <option value="3">Caramel</option>
-            <option value="4">Mocha</option>
-        </select>*@
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.drink_size, l4, "Pick a size")
-                            @*<select>
-            <option value="0">Select Size</option>
-            <option value="1">Small</option>
-            <option value="2">Medium</option>
-            <option value="3">Large</option>
-        </select>*@
                         </div>
                     </td>
                     <td id="latte">
@@ -134,47 +63,11 @@
                         <div>
                             <img src="~/images/latte.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio" id="latteRadio">
                             @Html.RadioButtonFor(models => models.product_name, "Latte coffee")
+                        </div>
+                        <div>
                             <label for="Latte">Latte</label>
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.roast, l1, "Pick a Roast")
-                            @*<select>
-            <option value="0">Select Roast</option>
-            <option value="1">Blonde</option>
-            <option value="2">Dark</option>
-            <option value="3">Breakfast</option>
-        </select>*@
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.milk, l2, "Pick a milk type")
-                            @*<select>
-            <option value="0">Select Milk</option>
-            <option value="1">No Milk</option>
-            <option value="2">Whole Milk</option>
-            <option value="3">2%</option>
-            <option value="4">Almond Milk</option>
-        </select>*@
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.flavor, l3, "Pick a flavor")
-                            @*<select>
-            <option value="0">Select Flavor</option>
-            <option value="1">Vanilla</option>
-            <option value="2">Hazelnut</option>
-            <option value="3">Caramel</option>
-            <option value="4">Mocha</option>
-        </select>*@
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.drink_size, l4, "Pick a size")
-                            @*<select>
-            <option value="0">Select Size</option>
-            <option value="1">Small</option>
-            <option value="2">Medium</option>
-            <option value="3">Large</option>
-        </select>*@
                         </div>
                     </td>
                 </tr>
@@ -184,48 +77,11 @@
                         <div>
                             <img src="~/images/americano.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio">
                             @Html.RadioButtonFor(models => models.product_name, "Americano coffee")
+                        </div>
+                        <div>
                             <label for="Americano">Americano</label>
-                        </div>
-                        <div>
-
-                            @Html.DropDownListFor(models => models.roast, l1, "Pick a Roast")
-                            @*<select>
-            <option value="0">Select Roast</option>
-            <option value="1">Blonde</option>
-            <option value="2">Dark</option>
-            <option value="3">Breakfast</option>
-        </select>*@
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.milk, l2, "Pick a milk type")
-                            @*<select>
-            <option value="0">Select Milk</option>
-            <option value="1">No Milk</option>
-            <option value="2">Whole Milk</option>
-            <option value="3">2%</option>
-            <option value="4">Almond Milk</option>
-        </select>*@
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.flavor, l3, "Pick a flavor")
-                            @*<select>
-            <option value="0">Select Flavor</option>
-            <option value="1">Vanilla</option>
-            <option value="2">Hazelnut</option>
-            <option value="3">Caramel</option>
-            <option value="4">Mocha</option>
-        </select>*@
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.drink_size, l4, "Pick a size")
-                            @*<select>
-            <option value="0">Select Size</option>
-            <option value="1">Small</option>
-            <option value="2">Medium</option>
-            <option value="3">Large</option>
-        </select>*@
                         </div>
                     </td>
                     <td>
@@ -233,47 +89,11 @@
                         <div>
                             <img src="~/images/mocha.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio">
                             @Html.RadioButtonFor(models => models.product_name, "Mocha coffee")
+                        </div>
+                        <div>
                             <label for="Mocha">Mocha</label>
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.roast, l1, "Pick a Roast")
-                            @*<select>
-            <option value="0">Select Roast</option>
-            <option value="1">Blonde</option>
-            <option value="2">Dark</option>
-            <option value="3">Breakfast</option>
-        </select>*@
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.milk, l2, "Pick a milk type")
-                            @*<select>
-            <option value="0">Select Milk</option>
-            <option value="1">No Milk</option>
-            <option value="2">Whole Milk</option>
-            <option value="3">2%</option>
-            <option value="4">Almond Milk</option>
-        </select>*@
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.flavor, l3, "Pick a flavor")
-                            @*<select>
-            <option value="0">Select Flavor</option>
-            <option value="1">Vanilla</option>
-            <option value="2">Hazelnut</option>
-            <option value="3">Caramel</option>
-            <option value="4">Mocha</option>
-        </select>*@
-                        </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.drink_size, l4, "Pick a size")
-                            @*<select>
-            <option value="0">Select Size</option>
-            <option value="1">Small</option>
-            <option value="2">Medium</option>
-            <option value="3">Large</option>
-        </select>*@
                         </div>
                     </td>
                     <td>
@@ -281,47 +101,28 @@
                         <div>
                             <img src="~/images/macchiato.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio">
                             @Html.RadioButtonFor(models => models.product_name, "Macchiato coffee")
+                        </div>
+                        <div>
                             <label for="Macchiato">Macchiato</label>
                         </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.roast, l1, "Pick a Roast")
-                            @*<select>
-            <option value="0">Select Roast</option>
-            <option value="1">Blonde</option>
-            <option value="2">Dark</option>
-            <option value="3">Breakfast</option>
-        </select>*@
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div class="orderSpecific">
+                            @Html.DropDownListFor(models=>models.roast,l1,"Pick a Roast")
                         </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.milk, l2, "Pick a milk type")
-                            @*<select>
-            <option value="0">Select Milk</option>
-            <option value="1">No Milk</option>
-            <option value="2">Whole Milk</option>
-            <option value="3">2%</option>
-            <option value="4">Almond Milk</option>
-        </select>*@
+                        <div class="orderSpecific">
+                            @Html.DropDownListFor(models => models.milk, l2,"Pick a milk type")
                         </div>
-                        <div>
+                        <div class="orderSpecific">
                             @Html.DropDownListFor(models => models.flavor, l3, "Pick a flavor")
-                            @*<select>
-            <option value="0">Select Flavor</option>
-            <option value="1">Vanilla</option>
-            <option value="2">Hazelnut</option>
-            <option value="3">Caramel</option>
-            <option value="4">Mocha</option>
-        </select>*@
                         </div>
-                        <div>
-                            @Html.DropDownListFor(models => models.drink_size, l4, "Pick a size")
-                            @*<select>
-            <option value="0">Select Size</option>
-            <option value="1">Small</option>
-            <option value="2">Medium</option>
-            <option value="3">Large</option>
-        </select>*@
+                        <div class="orderSpecific">
+                            @Html.DropDownListFor(models => models.drink_size,l4, "Pick a size")
                         </div>
                     </td>
                 </tr>
@@ -332,8 +133,10 @@
                             
                             <img src="~/images/croissant.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio">
                             @Html.RadioButtonFor(models => models.product_name, "croissant")
+                        </div>
+                        <div>
                             <label for="croissant">Almond Croissant</label>
                         </div>
                         
@@ -343,22 +146,24 @@
                         <div>
                             <img src="~/images/muffin.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio">
                             @Html.RadioButtonFor(models => models.product_name, "Blueberry Muffin")
-                            <label for="Muffin">Blueberry Muffin</label>
                         </div>
-                        
+                        <div>
+                            <label for="Muffin">Blueberry Muffin</label>
+                        </div>                        
                     </td>
                     <td>
                         @*<div class="row">*@
                         <div>
                             <img src="~/images/scones.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio">
                             @Html.RadioButtonFor(models => models.product_name, "Strawberry Scone")
-                            <label for="Scone">Strawberry Scone</label>
                         </div>
-                        
+                        <div>
+                            <label for="Scone">Strawberry Scone</label>
+                        </div>                        
                     </td>
                 </tr>
                 <tr id="orderButton">
@@ -378,4 +183,13 @@
         <br />
 
     </div>
+}
+
+@section scripts {
+    <script>
+        $(function () {
+
+        });
+    </script>    
+    
 }

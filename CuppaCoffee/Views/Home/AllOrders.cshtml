@@ -1,0 +1,63 @@
+﻿@using WebMatrix.Data
+@{
+    ViewBag.Title = "AllOrders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var db = Database.Open("DefaultConnection");
+    var selectQueryString = "SELECT * FROM dbo.\"Order\"";
+}
+
+<h2>All Orders</h2>
+
+
+<link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+<style>
+    tr, td {
+        color: #54230A !important;
+    }
+</style>
+<table id="Contentbg" style="background-color: #FFFFFF;">
+    <tr>
+        <td>
+              <table id="allOrders" border="1" cellpadding="10" style="border-collapse: collapse;">
+                  <thead>
+                      <tr>
+                          <th>#</th>
+                          <th>Order Key</th>
+                          <th>Product</th>
+                          <th>Roast</th>
+                          <th>Milk</th>
+                          <th>Flavor</th>
+                          <th>Drink Size</th>
+                          <th>Email</th>
+                          <th>Date</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @foreach (var row in db.Query(selectQueryString))
+                      {
+                      <tr>
+                          <td>@row.order_id</td>
+                          <td>@row.uuid</td>
+                          <td>@row.product_name</td>
+                          <td>@row.roast</td>
+                          <td>@row.milk</td>
+                          <td>@row.flavor</td>
+                          <td>@row.drink_size</td>
+                          <td>@row.customer_email</td>
+                          <td>@row.order_date</td>
+                      </tr>
+                      }
+                      </tbody>
+              </table>
+        </td>
+</tr>
+</table>
+
+@section scripts {
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(function () {
+            $('#allOrders').DataTable();
+        })
+    </script>    
+}

@@ -279,6 +279,7 @@
     <Content Include="Views\Home\UserPage.cshtml" />
     <Content Include="Views\Home\CheckoutPage.cshtml" />
     <Content Include="Views\Home\Inventory.cshtml" />
+    <Content Include="Views\Home\AllOrders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

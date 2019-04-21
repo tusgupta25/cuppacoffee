@@ -15,36 +15,39 @@
             <td>
                 <table id="orderitems">
                     <tr>
-                        <p>ViewBag.orders[1].product_name</p>
+                        <!--  <p>ViewBag.orders[1].product_name</p>-->
                         <td class="index_text">
                             <h2>Your order</h2>
                         </td>
                     </tr>
-                    <tr>
-                        @for (var i = 1; i < 5; i++)
-                        {
+                    @for (int i = 1; i <= (int)Session["order_items"]; i++)
+                    {
                         <tr>
                             <td>
-                                <img src="~/images/black coffee.png" height="20px" width="20px" />&nbsp;<text>Name of the coffee</text>
-
+                                <img src="~/images/black coffee.png" height="20px" width="20px" />
+                                <text>@Session["order__" + i + "__product_name"]</text>
                             </td>
                             <td>
-                                <p>Size</p>
+                                <text class="orderDetail">@Session["order__" + i + "__drink_size"]</text>
                             </td>
                             <td>
-                                <p id="money">$5</p>
+                                <p class="orderDetail" id="money">$5</p>
                             </td>
                         </tr>
-                        }
-            </tr>
-        <tr>
-            <td id="orderButton"><button>Continue Shopping</button></td>
-            
-            <td id="orderButton"><button><a href="https://www.paypal.com/us/home">Checkout</a></button></td>
-        </tr>
-        </table>
-
-        </td>
-
-        </table>
+                    }
+                    <tr>
+                        <td id="orderButton"><button>Continue Shopping</button></td>
+                        <td>
+                            @using (Html.BeginForm("Checkout", "Home", FormMethod.Post))
+    {
+                        <input type="submit" name="checkout" value="Proceed to Pay" />
 }
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+
+    </table>
+}
+
