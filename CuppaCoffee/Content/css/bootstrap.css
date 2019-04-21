@@ -7545,6 +7545,8 @@ a.list-group-item:focus {
     #orderButton button {
         padding: .5vh;
         width: 15vh;
+        height: 5vh;
+
     }
 
     .myaccount .ordertable td {
@@ -7609,14 +7611,18 @@ a.list-group-item:focus {
     #orderitems img{
         display: none;
     }
-    input[type="submit"]{
-        margin-top: 2.5vh;
-        height: 6.5vh;
+    input[type="submit"] {
+
+        margin-top: 0vh;
+        height: 5vh;
         width: auto;
         margin-left: 1vw;
     }
     .orderDetail{
       margin-left: -12vw; 
+    }
+    #registerWelcome{
+        display: none;
     }
 }
 
