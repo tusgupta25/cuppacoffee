@@ -20,18 +20,39 @@
                     </tr>
                     @for (int i = 1; i <= (int)Session["order_items"]; i++)
                     {
-                        <tr>
-                            <td>
-                                <img src="~/images/black coffee.png" height="20px" width="20px" />
-                                <text>@Session["order__" + i + "__product_name"]</text>
-                            </td>
-                            <td>
-                                <text class="orderDetail">@Session["order__" + i + "__drink_size"]</text>
-                            </td>
+                    <tr>
+                        <td>
+                            <img src="~/images/black coffee.png" height="20px" width="20px" />
+                            <text>@Session["order__" + i + "__product_name"]</text>
+                        </td>
+                        <td>
+                            <text class="orderDetail">@Session["order__" + i + "__drink_size"]</text>
+                        </td>
+                        @if ((string)@Session["order__" + i + "__drink_size"] == "Small")
+                        {
                             <td>
                                 <p class="orderDetail" id="money">$5</p>
                             </td>
-                        </tr>
+                        }
+                        @if ((string)@Session["order__" + i + "__drink_size"] == "Medium")
+                        {
+                            <td>
+                                <p class="orderDetail" id="money">$6</p>
+                            </td>
+                        }
+                        @if ((string)@Session["order__" + i + "__drink_size"] == "Large")
+                        {
+                            <td>
+                                <p class="orderDetail" id="money">$7</p>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <p class="orderDetail" id="money">$5</p>
+                            </td>
+                        }
+                    </tr>
                     }
                         <tr>
                             @using (Html.BeginForm("Contact", "Home", FormMethod.Post))
