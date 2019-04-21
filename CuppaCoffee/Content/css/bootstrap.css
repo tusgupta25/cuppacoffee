@@ -7415,9 +7415,6 @@ a.list-group-item:focus {
         display: none;
     }
 
-    .loginpagetable text {
-        display: none;
-    }
     #loginButton {
         height:5vh;
     }
@@ -7446,13 +7443,16 @@ a.list-group-item:focus {
         border-radius: 10px;
         /*width: auto;*/
         position: relative;
-        margin-left: -7vw;
-        margin-top: -15vh;
+        margin-left: -12vw;
+        margin-top: -7vh;
     }
 
         .loginpagetable input {
             width: 20vw;
            
+        }
+        .loginpagetable text{
+            display: inline-block;
         }
 
     .logindetails tr {
