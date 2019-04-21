@@ -30,6 +30,7 @@
         <br />
         <br />
         <div class="myaccount">
+            <br/>
             <h2>Order</h2>
             <table class="ordertable">
                 <tr id="firstRowOrder">
@@ -38,8 +39,10 @@
                         <div>
                             <img src="~/images/black coffee.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio">
                             @Html.RadioButtonFor(models=>models.product_name,"Black Coffee")
+                        </div>
+                        <div>
                             <label for="blackCoffee">Black Coffee</label>
                         </div>
                     </td>
@@ -48,8 +51,10 @@
                         <div>
                             <img src="~/images/Cappuccino.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio">
                             @Html.RadioButtonFor(models=>models.product_name,"Cappuccino coffee")
+                        </div>
+                        <div>
                             <label for="Cappuccino">Cappuccino</label>
                         </div>
                     </td>
@@ -58,8 +63,10 @@
                         <div>
                             <img src="~/images/latte.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio" id="latteRadio">
                             @Html.RadioButtonFor(models => models.product_name, "Latte coffee")
+                        </div>
+                        <div>
                             <label for="Latte">Latte</label>
                         </div>
                     </td>
@@ -70,8 +77,10 @@
                         <div>
                             <img src="~/images/americano.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio">
                             @Html.RadioButtonFor(models => models.product_name, "Americano coffee")
+                        </div>
+                        <div>
                             <label for="Americano">Americano</label>
                         </div>
                     </td>
@@ -80,8 +89,10 @@
                         <div>
                             <img src="~/images/mocha.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio">
                             @Html.RadioButtonFor(models => models.product_name, "Mocha coffee")
+                        </div>
+                        <div>
                             <label for="Mocha">Mocha</label>
                         </div>
                     </td>
@@ -90,24 +101,27 @@
                         <div>
                             <img src="~/images/macchiato.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio">
                             @Html.RadioButtonFor(models => models.product_name, "Macchiato coffee")
+                        </div>
+                        <div>
                             <label for="Macchiato">Macchiato</label>
                         </div>
                     </td>
                 </tr>
                 <tr>
+                    <td></td>
                     <td>
-                        <div>
+                        <div class="orderSpecific">
                             @Html.DropDownListFor(models=>models.roast,l1,"Pick a Roast")
                         </div>
-                        <div>
+                        <div class="orderSpecific">
                             @Html.DropDownListFor(models => models.milk, l2,"Pick a milk type")
                         </div>
-                        <div>
+                        <div class="orderSpecific">
                             @Html.DropDownListFor(models => models.flavor, l3, "Pick a flavor")
                         </div>
-                        <div>
+                        <div class="orderSpecific">
                             @Html.DropDownListFor(models => models.drink_size,l4, "Pick a size")
                         </div>
                     </td>
@@ -119,8 +133,10 @@
                             
                             <img src="~/images/croissant.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio">
                             @Html.RadioButtonFor(models => models.product_name, "croissant")
+                        </div>
+                        <div>
                             <label for="croissant">Almond Croissant</label>
                         </div>
                         
@@ -130,22 +146,24 @@
                         <div>
                             <img src="~/images/muffin.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio">
                             @Html.RadioButtonFor(models => models.product_name, "Blueberry Muffin")
-                            <label for="Muffin">Blueberry Muffin</label>
                         </div>
-                        
+                        <div>
+                            <label for="Muffin">Blueberry Muffin</label>
+                        </div>                        
                     </td>
                     <td>
                         @*<div class="row">*@
                         <div>
                             <img src="~/images/scones.png" />
                         </div>
-                        <div>
+                        <div class="orderRadio">
                             @Html.RadioButtonFor(models => models.product_name, "Strawberry Scone")
-                            <label for="Scone">Strawberry Scone</label>
                         </div>
-                        
+                        <div>
+                            <label for="Scone">Strawberry Scone</label>
+                        </div>                        
                     </td>
                 </tr>
                 <tr id="orderButton">

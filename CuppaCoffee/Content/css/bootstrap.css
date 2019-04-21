@@ -242,7 +242,7 @@ select {
 }
 
 .myaccount .ordertable{
-    margin-left: 10vw;
+    margin-left: 12.5vw;
 }
 .myaccount .ordertable td{
     padding: 5vh;
@@ -260,10 +260,36 @@ select {
     border: #6f4e37;
     margin-bottom: 2vh;
 }
+#loginButton{
+    color: #6f4e37;
+    padding: .7vh;
+    box-shadow: 2px 2px 4px 5px #6f4e37;
+    border: #6f4e37;
+    background-color: khaki;
+}
+
+
 #latte {
     padding-top: 12vh;
 }
+.orderRadio{
+    margin-top: 2vh;
+}
+#latteRadio{
+    margin-top: 5vh;
+}
+.orderSpecific {
+    padding: 1.5vh;
+}
+input[type="submit"] {
+    color: #6f4e37;
+    margin-bottom: 2vh;
+    box-shadow: 2px 2px 4px 5px #6f4e37;
+    border: #6f4e37;
+    background-color:khaki;
+    height: 7.5vh;
 
+}
 
 button,
 html input[type="button"],
@@ -7242,9 +7268,9 @@ a.list-group-item:focus {
     #newContentbg {
         width:40vw;
         border-radius: 10px;
-        
+        margin-left: -15vw;
         position: absolute;
-        margin-top: 0%;
+        margin-top: -6vh;
     }
     #Contentbg{
         display:none;
@@ -7366,8 +7392,9 @@ display:none;
         border-radius: 10px;
         /*width: auto;*/
         position: relative;
-        margin-left: -7vw;
-        margin-top: -15vh;
+        margin-left: -18vw;
+        margin-top: -12vh;
+
 
     }
     
@@ -7398,7 +7425,12 @@ display:none;
         float: right;
         left: -100%;
         position: relative;
-        margin-top: 120px;
+        margin-top: 155px;
+    }
+    #loginButton{ 
+        margin-top: 1.5vh;
+        padding-top: .5vh;
+        width: 20vw;
     }
     .myaccountouter{
         margin-left: -7vw;
@@ -7454,8 +7486,11 @@ display:none;
 
     }
     .myaccount .ordertable td{
-        padding-left: 1.5vh;
-        padding-bottom: 2vh;
+        padding-left: 0vh;
+        padding-bottom: 1vh;
+    }
+    #latte{
+        padding-top: 5vh;
     }
     #orderitems{
         margin-top: 3vh;
@@ -7468,6 +7503,18 @@ display:none;
     #orderitems #orderButton{
         padding-left: 7vw;
         padding-top: 3vh;
+    }
+    #orderitems img{
+        display: none;
+    }
+    input[type="submit"]{
+        margin-top: 2.5vh;
+        height: 6.5vh;
+        width: auto;
+        margin-left: 1vw;
+    }
+    .orderDetail{
+      margin-left: -12vw; 
     }
 }
 
