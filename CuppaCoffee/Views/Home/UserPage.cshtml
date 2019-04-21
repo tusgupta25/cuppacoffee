@@ -53,14 +53,14 @@
         </div>
         <div class="row">
             <div>
-                <label for="lname">Phone Number</label>
+                <label for="lname">Rewards</label>
             </div>
             <div class="responsetext">
                 <!-- <input type="text" id="phoneNumber" name="phoneNumber" readonly="readonly" placeholder="Your phone number.."> -->
-                @if (Session["LoggedUserPhoneNumber"] != null)
+                @if (Session["LoggedUserRewards"] != null)
                 {
                     <text>
-                        @Session["LoggedUserPhoneNumber"].ToString()
+                        @Session["LoggedUserRewards"]
                     </text>
                 }
             </div>
