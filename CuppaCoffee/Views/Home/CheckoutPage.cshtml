@@ -3,9 +3,7 @@
     ViewBag.Title = "CheckoutPage";
 }
 
-@using (Html.BeginForm("Contact", "Home", FormMethod.Post))
 
-{
     <table id="newContentbg">
         <tr>
             <td class="gifcontainer">
@@ -35,19 +33,22 @@
                             </td>
                         </tr>
                     }
-                    <tr>
-                        <td id="orderButton"><button>Continue Shopping</button></td>
-                        <td>
+                        <tr>
+                            @using (Html.BeginForm("Contact", "Home", FormMethod.Post))
+
+                            {
+                                <td id="orderButton"><button>Continue Shopping</button></td>
+                            }
                             @using (Html.BeginForm("Checkout", "Home", FormMethod.Post))
-    {
-                        <input type="submit" name="checkout" value="Proceed to Pay" />
-}
-                        </td>
-                    </tr>
+                            {
+                                <td>
+                                        <input type="submit" name="checkout" value="Proceed to Pay" />
+                            
+                                </td>
+                            }
+                            </tr>
                 </table>
-
             </td>
-
     </table>
-}
+
 
