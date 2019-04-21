@@ -237,7 +237,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\.vs\ProjectSettings.json" />
+    
     <Content Include="images\.vs\slnx.sqlite" />
     <Content Include="images\.vs\VSWorkspaceState.json" />
     <EntityDeploy Include="Model1.edmx">
