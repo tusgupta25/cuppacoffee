@@ -26,17 +26,24 @@ namespace CuppaCoffee.Controllers
         {
             if (Request.HttpMethod == "POST")
             {
-                if (Session["order_items"] == null || (int)Session["order_items"] == 0)
-                    Session["order_items"] = 0;
-               
-                Session["order_items"] = (int)Session["order_items"] + 1;
-                int items = (int)Session["order_items"];
+                if (Session["LoggedUserID"] == null)
+                {
+                    return RedirectToAction("Checkout");
+                }
+                else
+                {
+                    if (Session["order_items"] == null || (int)Session["order_items"] == 0)
+                        Session["order_items"] = 0;
 
-                Session["order__" + items + "__product_name"] = Request.Form["product_name"];
-                Session["order__" + items + "__roast"] = Request.Form["roast"];
-                Session["order__" + items + "__milk"] = Request.Form["milk"];
-                Session["order__" + items + "__flavor"] = Request.Form["flavor"];
-                Session["order__" + items + "__drink_size"] = Request.Form["drink_size"];
+                    Session["order_items"] = (int)Session["order_items"] + 1;
+                    int items = (int)Session["order_items"];
+
+                    Session["order__" + items + "__product_name"] = Request.Form["product_name"];
+                    Session["order__" + items + "__roast"] = Request.Form["roast"];
+                    Session["order__" + items + "__milk"] = Request.Form["milk"];
+                    Session["order__" + items + "__flavor"] = Request.Form["flavor"];
+                    Session["order__" + items + "__drink_size"] = Request.Form["drink_size"];
+                }
             }
             ViewBag.Orders = new List<Order>();
             ViewBag.Orders.Add(order);
@@ -64,7 +71,6 @@ namespace CuppaCoffee.Controllers
                         var query = "INSERT INTO dbo.\"Order\" (product_name, roast, milk, flavor, drink_size, order_date, customer_email, uuid) VALUES ('"+pname+"', '"+roast+"', '"+milk+"', '"+flavor+"', '"+dsize+"', GETDATE(), '"+email+"', '"+uuid+"')";
                         dc.Database.ExecuteSqlCommand(query);
                         var query1 = "UPDATE dbo.customers SET rewards = rewards + 5 WHERE customer_email = '" + email + "';";
-                        System.Diagnostics.Debug.WriteLine(query1);
                         dc.Database.ExecuteSqlCommand(query1);
                     }
                 }
