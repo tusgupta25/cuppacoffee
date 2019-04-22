@@ -1,13 +1,15 @@
 ﻿@using WebMatrix.Data
 @{
     ViewBag.Title = "inventory";
+    //open Database Connection
     var db = Database.Open("DefaultConnection");
+    //defining query to fetch all records from products table
     var selectQueryString = "SELECT * FROM products";
 }
 
 
 @ViewBag.Message
-@using (Html.BeginForm("Inventory", "Home", FormMethod.Post))
+@using (Html.BeginForm("Inventory", "Home", FormMethod.Post)) //call Inventory action on button click
 {
     @Html.AntiForgeryToken() // this is to prevent CSRF attack
     @Html.ValidationSummary(true)
@@ -24,16 +26,15 @@
                             <tr>
                                 <th>Product</th>
                                 <th>Quantity</th>
-
                             </tr>
                         </thead>
                         <tbody>
-
+                            @*fetch all records from product table *@
                             @foreach (var row in db.Query(selectQueryString))
                             {
                                 <tr>
-                                    <td>@row.product_name</td>
-                                    <td><input type="text" name="invproduct_@row.product_ID" value="@row.product_quantity" /></td>
+                                    <td>@row.product_name</td> @*display product name*@
+                                    <td><input type="text" name="invproduct_@row.product_ID" value="@row.product_quantity" /></td> @*display available quantity*@
 
                                 </tr>
                             }

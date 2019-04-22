@@ -1,65 +1,64 @@
 ﻿@{ @model CuppaCoffee.Order
-    ViewBag.Title = "Contact";
+ViewBag.Title = "Contact";
 
-    List<SelectListItem> l1 = new List<SelectListItem>();
-    l1.Add(new SelectListItem() { Text = "Blonde", Value = "Blonde" });
-    l1.Add(new SelectListItem() { Text = "Dark", Value = "Dark" });
-    l1.Add(new SelectListItem() { Text = "Breakfast", Value = "Breakfast" });
+List<SelectListItem> l1 = new List<SelectListItem>();
+l1.Add(new SelectListItem() { Text = "Blonde", Value = "Blonde" });
+l1.Add(new SelectListItem() { Text = "Dark", Value = "Dark" });
+l1.Add(new SelectListItem() { Text = "Breakfast", Value = "Breakfast" });
 
-    List<SelectListItem> l2 = new List<SelectListItem>();
-    l2.Add(new SelectListItem() { Text = "No milk", Value = "No milk" });
-    l2.Add(new SelectListItem() { Text = "Whole Milk", Value = "Whole Milk" });
-    l2.Add(new SelectListItem() { Text = "2%", Value = "2%" });
-    l2.Add(new SelectListItem() { Text = "Almond", Value = "Almond" });
+List<SelectListItem> l2 = new List<SelectListItem>();
+l2.Add(new SelectListItem() { Text = "No milk", Value = "No milk" });
+l2.Add(new SelectListItem() { Text = "Whole Milk", Value = "Whole Milk" });
+l2.Add(new SelectListItem() { Text = "2%", Value = "2%" });
+l2.Add(new SelectListItem() { Text = "Almond", Value = "Almond" });
 
-    List<SelectListItem> l3 = new List<SelectListItem>();
-    l3.Add(new SelectListItem() { Text = "Vanilla", Value = "Vanilla" });
-    l3.Add(new SelectListItem() { Text = "Caramel", Value = "Caramel" });
-    l3.Add(new SelectListItem() { Text = "Hazelnut", Value = "Hazelnut" });
-    l3.Add(new SelectListItem() { Text = "Mocha", Value = "Mocha" });
+List<SelectListItem> l3 = new List<SelectListItem>();
+l3.Add(new SelectListItem() { Text = "Vanilla", Value = "Vanilla" });
+l3.Add(new SelectListItem() { Text = "Caramel", Value = "Caramel" });
+l3.Add(new SelectListItem() { Text = "Hazelnut", Value = "Hazelnut" });
+l3.Add(new SelectListItem() { Text = "Mocha", Value = "Mocha" });
 
-    List<SelectListItem> l4 = new List<SelectListItem>();
-    l4.Add(new SelectListItem() { Text = "Small", Value = "Small" });
-    l4.Add(new SelectListItem() { Text = "Medium", Value = "Medium" });
-    l4.Add(new SelectListItem() { Text = "Large", Value = "Large" });
+List<SelectListItem> l4 = new List<SelectListItem>();
+l4.Add(new SelectListItem() { Text = "Small", Value = "Small" });
+l4.Add(new SelectListItem() { Text = "Medium", Value = "Medium" });
+l4.Add(new SelectListItem() { Text = "Large", Value = "Large" });
 
 }
+
+@*Call AddToCart action on button click *@
 @using (Html.BeginForm("AddToCart", "Home", FormMethod.Post))
 {
     <div class="container myaccountouter">
         <br />
         <br />
         <div class="myaccount">
-            <br/>
+            <br />
             <h2>Order</h2>
             <table class="ordertable">
                 <tr id="firstRowOrder">
                     <td>
-                        @*<div class="row">*@
                         <div>
                             <img src="~/images/black coffee.png" />
                         </div>
                         <div class="orderRadio">
-                            @Html.RadioButtonFor(models=>models.product_name,"Black Coffee")
+                            @Html.RadioButtonFor(models => models.product_name, "Black Coffee")
                         </div>
                         <div>
                             <label for="blackCoffee">Black Coffee</label>
                         </div>
                     </td>
                     <td>
-                        @*<div class="row">*@
                         <div>
                             <img src="~/images/Cappuccino.png" />
                         </div>
                         <div class="orderRadio">
-                            @Html.RadioButtonFor(models=>models.product_name,"Cappuccino coffee")
+                            @Html.RadioButtonFor(models => models.product_name, "Cappuccino coffee")
                         </div>
                         <div>
                             <label for="Cappuccino">Cappuccino</label>
                         </div>
                     </td>
                     <td id="latte">
-                        @*<div class="row">*@
                         <div>
                             <img src="~/images/latte.png" />
                         </div>
@@ -73,7 +72,6 @@
                 </tr>
                 <tr id="secondRowOrder">
                     <td>
-                        @*<div class="row">*@
                         <div>
                             <img src="~/images/americano.png" />
                         </div>
@@ -85,7 +83,6 @@
                         </div>
                     </td>
                     <td>
-                        @*<div class="row">*@
                         <div>
                             <img src="~/images/mocha.png" />
                         </div>
@@ -97,7 +94,6 @@
                         </div>
                     </td>
                     <td>
-                        @*<div class="row">*@
                         <div>
                             <img src="~/images/macchiato.png" />
                         </div>
@@ -113,24 +109,22 @@
                     <td></td>
                     <td>
                         <div class="orderSpecific">
-                            @Html.DropDownListFor(models=>models.roast,l1,"Pick a Roast")
+                            @Html.DropDownListFor(models => models.roast, l1, "Pick a Roast")
                         </div>
                         <div class="orderSpecific">
-                            @Html.DropDownListFor(models => models.milk, l2,"Pick a milk type")
+                            @Html.DropDownListFor(models => models.milk, l2, "Pick a milk type")
                         </div>
                         <div class="orderSpecific">
                             @Html.DropDownListFor(models => models.flavor, l3, "Pick a flavor")
                         </div>
                         <div class="orderSpecific">
-                            @Html.DropDownListFor(models => models.drink_size,l4, "Pick a size")
+                            @Html.DropDownListFor(models => models.drink_size, l4, "Pick a size")
                         </div>
                     </td>
                 </tr>
                 <tr id="foodOrder">
                     <td>
-                        @*<div class="row">*@
                         <div>
-                            
                             <img src="~/images/croissant.png" />
                         </div>
                         <div class="orderRadio">
@@ -139,10 +133,8 @@
                         <div>
                             <label for="croissant">Almond Croissant</label>
                         </div>
-                        
                     </td>
                     <td>
-                        @*<div class="row">*@
                         <div>
                             <img src="~/images/muffin.png" />
                         </div>
@@ -151,10 +143,9 @@
                         </div>
                         <div>
                             <label for="Muffin">Blueberry Muffin</label>
-                        </div>                        
+                        </div>
                     </td>
                     <td>
-                        @*<div class="row">*@
                         <div>
                             <img src="~/images/scones.png" />
                         </div>
@@ -163,13 +154,12 @@
                         </div>
                         <div>
                             <label for="Scone">Strawberry Scone</label>
-                        </div>                        
+                        </div>
                     </td>
                 </tr>
                 <tr id="orderButton">
                     <td></td>
                     <td>
-                        @*<div class="row">*@
                         <div>
                             <center><button>Order</button></center>
                         </div>

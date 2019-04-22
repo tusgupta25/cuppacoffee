@@ -1,8 +1,6 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "CheckoutPage";
 }
-
 
     <table id="newContentbg">
         <tr>
@@ -13,7 +11,6 @@
             <td>
                 <table id="orderitems">
                     <tr>
-                        <!--  <p>ViewBag.orders[1].product_name</p>-->
                         <td class="index_text">
                             <h2>Your order</h2>
                         </td>
@@ -55,11 +52,13 @@
                     </tr>
                     }
                         <tr>
+                            @*Call Order action on button click to return to Order page*@
                             @using (Html.BeginForm("Contact", "Home", FormMethod.Post))
 
                             {
                                 <td id="orderButton"><button>Continue Shopping</button></td>
                             }
+                            @*Call Checkout action on button click to update order in DB*@
                             @using (Html.BeginForm("Checkout", "Home", FormMethod.Post))
                             {
                                 <td>
