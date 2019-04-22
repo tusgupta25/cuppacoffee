@@ -7254,7 +7254,7 @@ a.list-group-item:focus {
     }
     /*navigational links to the left*/
 
-    #extralink1, #extralink2, #extralink3, #extralink4, #extralink5 {
+    #extralink1, #extralink2, #extralink3, #extralink4, #extralink5, #extralink6 {
         display: block;
     }
     /*no picture next to the address in the about us page*/
