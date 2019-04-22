@@ -46,7 +46,7 @@
                                 <p class="orderDetail" id="money">$7</p>
                             </td>
                         }
-                        @if (@Session["order__" + i + "__drink_size"] == null)
+                        @if ((string)@Session["order__" + i + "__drink_size"] == "")
                         {
                             <td>
                                 <p class="orderDetail" id="money">$5</p>
