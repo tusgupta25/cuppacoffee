@@ -170,12 +170,18 @@ textarea {
   font-size: 100%;
 }
 
+.validation-summary-valid {
+    display: none;
+}
+
+
+
 
 input {
-    height:1.5em;
-    width:15vw;
-  line-height: normal;
-  border-radius:5%;
+    height: 1.5em;
+    width: 15vw;
+    line-height: normal;
+    border-radius: 5%;
 }
 
 /*sumit button formatting*/

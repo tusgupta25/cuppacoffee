@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>Something's wrong</title>
 </head>
-<body style="background-color:#6f4e37;font-family:'Lucida Calligraphy',sans-serif">
+<body style="background-color:khaki;font-family:'Lucida Calligraphy',sans-serif">
     <table id="404notfound" style="margin-left:20vw;margin-top:20vh;margin-right:20vw">
         <tr>
             <td>
@@ -19,8 +19,9 @@
         </tr>
         <tr>
             <td style="text-align:center">
-                <p style="color:blanchedalmond">Oops! I've never been here.</p>
-                <p style="color:blanchedalmond">This place is unknown.. Let's take you  <a href="~/Views/Home/Index.cshtml" style="color:blanchedalmond;font-weight:bold;font-size:3vw"> Home</a></p>
+                <p style="color:#6f4e37">Oops! I've never been here.</p>
+                <p style="color:#6f4e37">This place is unknown.. Let's take you </p>
+                <p style="text-decoration:none;font:3vw; color:blanchedalmond"> @Html.ActionLink("Home", "Index", "Home")</p>
                 
             </td>
             
