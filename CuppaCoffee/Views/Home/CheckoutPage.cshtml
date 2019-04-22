@@ -4,6 +4,7 @@
 
     <table id="newContentbg">
         <tr>
+            <!--the steaming cup of coffee-->
             <td class="gifcontainer">
                 <img src="~/images/coffee_steam.gif" id="thegif" />
             </td>
@@ -15,6 +16,7 @@
                             <h2>Your order</h2>
                         </td>
                     </tr>
+                    <!--populates the checkout table-->
                     @for (int i = 1; i <= (int)Session["order_items"]; i++)
                     {
                     <tr>
@@ -25,6 +27,7 @@
                         <td>
                             <text class="orderDetail">@Session["order__" + i + "__drink_size"]</text>
                         </td>
+                        <!--shows how much money per size-->
                         @if ((string)@Session["order__" + i + "__drink_size"] == "Small")
                         {
                             <td>

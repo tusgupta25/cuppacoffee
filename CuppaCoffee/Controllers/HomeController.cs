@@ -9,6 +9,7 @@ namespace CuppaCoffee.Controllers
 {
     public class HomeController : Controller
     {
+        //method that redirects to the home page after the error page
         [HandleError]
         public ActionResult Index()
         {
@@ -22,7 +23,7 @@ namespace CuppaCoffee.Controllers
 
             return View();
         }
-
+        //method to add ordered items to cart in the same session
         public ActionResult AddToCart(CuppaCoffee.Order order)
         {
             if (Request.HttpMethod == "POST")
@@ -50,7 +51,7 @@ namespace CuppaCoffee.Controllers
             ViewBag.Orders.Add(order);
             return RedirectToAction("Checkout");
         }
-
+        //method to chekout items from the cart and update the database
         public ActionResult Checkout()
         {
             if (Request.HttpMethod == "POST")
@@ -88,30 +89,30 @@ namespace CuppaCoffee.Controllers
                 return RedirectToAction("Login");
             }
         }
-
+        
         public ActionResult Contact()
         {
             ViewBag.Message = "Select your favorite drink";
 
             return View();
         }
-
+        //method for the my account that returns the page when called
         public ActionResult UserPage()
         {
             return View();
         }
-
+        //method that takes the user to the login page after logging out
         public ActionResult Logout()
         {
             Session.Abandon();
             return RedirectToAction("Login");
         }
-
+        //method called upon to view all the orders made (manager's perspective)
         public ActionResult AllOrders()
         {
             return View();
         }
-
+        //method to update inventory
         public ActionResult Inventory()
         {
             CuppaDBEntities dc = new CuppaDBEntities();
@@ -132,7 +133,7 @@ namespace CuppaCoffee.Controllers
  
             return View();
         }
-
+        //method that creates a session for a user and distiguished between customer and manager
         public ActionResult Login(CuppaCoffee.customer c)
         {
             // this action is for handle post (login)

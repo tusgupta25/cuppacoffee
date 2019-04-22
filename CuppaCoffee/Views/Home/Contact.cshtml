@@ -1,6 +1,7 @@
 ﻿@{ @model CuppaCoffee.Order
 ViewBag.Title = "Contact";
 
+<!--puts all the items for each drop down list in one place to be retrieved from-->
 List<SelectListItem> l1 = new List<SelectListItem>();
 l1.Add(new SelectListItem() { Text = "Blonde", Value = "Blonde" });
 l1.Add(new SelectListItem() { Text = "Dark", Value = "Dark" });
@@ -31,9 +32,11 @@ l4.Add(new SelectListItem() { Text = "Large", Value = "Large" });
     <div class="container myaccountouter">
         <br />
         <br />
+        <!--the background for the page-->
         <div class="myaccount">
             <br />
             <h2>Order</h2>
+            <!--table that holds the menu-->
             <table class="ordertable">
                 <tr id="firstRowOrder">
                     <td>
@@ -107,6 +110,7 @@ l4.Add(new SelectListItem() { Text = "Large", Value = "Large" });
                 </tr>
                 <tr>
                     <td></td>
+                    <!--the drop down list where user customizes drink-->
                     <td>
                         <div class="orderSpecific">
                             @Html.DropDownListFor(models => models.roast, l1, "Pick a Roast")
@@ -123,6 +127,7 @@ l4.Add(new SelectListItem() { Text = "Large", Value = "Large" });
                     </td>
                 </tr>
                 <tr id="foodOrder">
+                    <!--the food orders-->
                     <td>
                         <div>
                             <img src="~/images/croissant.png" />
@@ -157,6 +162,7 @@ l4.Add(new SelectListItem() { Text = "Large", Value = "Large" });
                         </div>
                     </td>
                 </tr>
+                <!--the button to order-->
                 <tr id="orderButton">
                     <td></td>
                     <td>

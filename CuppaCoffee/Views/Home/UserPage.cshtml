@@ -2,10 +2,11 @@
     ViewBag.Title = "UserPage";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<!--the outer page formatting-->
 <div class=" container myaccountouter">
     <br />
     <br />
+    <!--the form formatting-->
     <form class="myaccount">
         <h2>My Account</h2>
         <div class="row">
@@ -13,6 +14,7 @@
                 <label for="fname">First Name</label>
             </div>
             <div class="responsetext">
+                <!--code to pull the user's first name from the database-->
                 @if (Session["LoggedUserFirstName"] != null) //print FirstName of LoggedIn User
                 {
                     <text>
@@ -26,6 +28,7 @@
                 <label for="lname">Last Name</label>
             </div>
             <div class="responsetext">
+                <!--code to pull the user's last name from the database-->
                 @if (Session["LoggedUserLastName"] != null) //print LastName of LoggedIn User
                 {
                     <text>
@@ -38,6 +41,7 @@
             <div>
                 <label for="lname">Email Address</label>
             </div>
+             <!--code to pull the user's email address from the database-->
             <div class="responsetext">
                 @if (Session["LoggedUserID"] != null) //print EmailID of LoggedIn User
                 {
@@ -51,6 +55,7 @@
             <div>
                 <label for="lname">Rewards</label>
             </div>
+            <!--code to pull the user's rewards points from the database-->
             <div class="responsetext">
                 @if (Session["LoggedUserRewards"] != null) //print Rewards of LoggedIn User
                 {
