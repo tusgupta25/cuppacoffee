@@ -43,7 +43,7 @@
                                 <p class="orderDetail" id="money">$7</p>
                             </td>
                         }
-                        else
+                        @if (@Session["order__" + i + "__drink_size"] == null)
                         {
                             <td>
                                 <p class="orderDetail" id="money">$5</p>
