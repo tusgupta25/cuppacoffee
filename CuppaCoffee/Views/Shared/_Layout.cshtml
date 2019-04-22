@@ -75,8 +75,9 @@
         <!--this is the footer-->
         <footer>
             <p>&copy; @DateTime.Now.Year -Brewing since 1987</p>
-            <a href="https://www.google.com">Contact Us</a>
-            <a href=" https:www.facebook.com">About Us</a>
+
+            <a>@Html.ActionLink("Contact Us","About","Home")</a>
+            <a>@Html.ActionLink("About Us","About","Home")</a>
         </footer>
     </div>
 
