@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "UserPage";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -14,8 +13,7 @@
                 <label for="fname">First Name</label>
             </div>
             <div class="responsetext">
-                <!--<input type="text" id="fname" readonly="readonly" name="firstname" placeholder="Your name.."> -->
-                @if (Session["LoggedUserFirstName"] != null)
+                @if (Session["LoggedUserFirstName"] != null) //print FirstName of LoggedIn User
                 {
                     <text>
                         @Session["LoggedUserFirstName"].ToString()
@@ -28,8 +26,7 @@
                 <label for="lname">Last Name</label>
             </div>
             <div class="responsetext">
-                <!-- <input type="text" id="lname" name="lastname" readonly="readonly" placeholder="Your last name.."> -->
-                @if (Session["LoggedUserLastName"] != null)
+                @if (Session["LoggedUserLastName"] != null) //print LastName of LoggedIn User
                 {
                     <text>
                         @Session["LoggedUserLastName"].ToString()
@@ -42,8 +39,7 @@
                 <label for="lname">Email Address</label>
             </div>
             <div class="responsetext">
-                <!-- <input type="text" id="EmailID" name="emailAddress" readonly="readonly" placeholder="Your email address.."> -->
-                @if (Session["LoggedUserID"] != null)
+                @if (Session["LoggedUserID"] != null) //print EmailID of LoggedIn User
                 {
                     <text>
                         @Session["LoggedUserID"].ToString()
@@ -56,8 +52,7 @@
                 <label for="lname">Rewards</label>
             </div>
             <div class="responsetext">
-                <!-- <input type="text" id="phoneNumber" name="phoneNumber" readonly="readonly" placeholder="Your phone number.."> -->
-                @if (Session["LoggedUserRewards"] != null)
+                @if (Session["LoggedUserRewards"] != null) //print Rewards of LoggedIn User
                 {
                     <text>
                         @Session["LoggedUserRewards"]
@@ -65,9 +60,8 @@
                 }
             </div>
         </div>
-        <img id="userpageImage"src="~/images/mascot.png" />
+        <img id="userpageImage" src="~/images/mascot.png" />
     </form>
-
     <br />
     <br />
 </div>

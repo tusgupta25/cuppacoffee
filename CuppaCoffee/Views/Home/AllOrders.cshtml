@@ -2,13 +2,15 @@
 @{
     ViewBag.Title = "AllOrders";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    //open Database Connection
     var db = Database.Open("DefaultConnection");
+    //defining query to fetch all records from Order table
     var selectQueryString = "SELECT * FROM dbo.\"Order\"";
 }
 
 <h2>All Orders</h2>
 
-
+@*adding CSS to style DataTables plug-in for fully interactive Order table on Manager View*@
 <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
 <style>
     tr, td {
@@ -33,6 +35,7 @@
                       </tr>
                   </thead>
                   <tbody>
+                      @*Fetching all rows from Order table to populate table for Manager View *@
                       @foreach (var row in db.Query(selectQueryString))
                       {
                       <tr>
@@ -53,6 +56,7 @@
 </tr>
 </table>
 
+@*DataTable plug-in (jQuery) for a fully interactive Order table on Manager View *@
 @section scripts {
     <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script>

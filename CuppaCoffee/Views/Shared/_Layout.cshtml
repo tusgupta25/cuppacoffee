@@ -9,6 +9,7 @@
 
 </head>
 <body>
+    <!--this is the nav bar where our links and logo and title are-->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <a href="#" class="navbar-left"><img src="~/images/justcup.png" /></a>
@@ -16,6 +17,8 @@
 
                 @Html.ActionLink("Cuppa Coffee", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
+            <!--if the user is a manager, the inventory link will show. If the user is a customer,
+                the checkout, logout will show-->
             <div class="logincheckout">
                 @if (Session["isManager"] != null)
                 {
@@ -37,10 +40,11 @@
                 }
 
             </div>
+            <!--this is hidden in the desktop view-->
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Find Us", "About", "Home")</li>               
+                    <li>@Html.ActionLink("Find Us", "About", "Home")</li>
                     <li>@Html.ActionLink("Order", "Contact", "Home")</li>
                     <!--   <li id="funfact">@Html.ActionLink("Fun facts", "Login", "Home")</li>-->
                     @if (Session["isManager"] != null)
@@ -65,9 +69,10 @@
             </div>
         </div>
     </div>
+    <!--this is the body-->
     <div class="container body-content">
         @RenderBody()
-
+        <!--this is the footer-->
         <footer>
             <p>&copy; @DateTime.Now.Year -Brewing since 1987</p>
             <a href="https://www.google.com">Contact Us</a>
