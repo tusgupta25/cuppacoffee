@@ -3,7 +3,7 @@
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<!--table that holds everything in it-->
 <table class="loginpagetable">
     <tr>
         <td>
@@ -12,8 +12,10 @@
             {
                 @Html.AntiForgeryToken() // this is for prevent CSRF attack
                 @Html.ValidationSummary(true)
+                <!--table where user logs in-->
                 <table id="logindetails" class="logindetails">
                     <tr>
+                        <!--email-->
                         <td>
                             @Html.LabelFor(a => a.customer_email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })
                         </td>
@@ -22,6 +24,7 @@
                         </td>
                     </tr>
                     <tr>
+                        <!--password-->
                         <td>
                             @Html.LabelFor(a => a.customer_password, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
                         </td>
@@ -30,6 +33,7 @@
                         </td>
                     </tr>
                     <tr>
+                        <!--login button-->
                         <td colspan="2">
                             <center><input type="submit" name="Log In" value="Log In" id="loginButton" /></center>
                         </td>
@@ -51,6 +55,7 @@
             {
                 @Html.AntiForgeryToken() // this is for prevent CSRF attack
                 @Html.ValidationSummary(true)
+                <!--where users register-->
                 <table id="signupsheet" class="logindetails">
                     <tr>
                         <td colspan="5">
@@ -58,6 +63,7 @@
                         </td>
                     </tr>
                     <tr>
+                        <!--first name-->
                         <td>
                             @Html.LabelFor(b => b.customer_firstname, "Firstname", htmlAttributes: new { @class = "control-label col-md-2" })
                         </td>
@@ -66,6 +72,7 @@
                         </td>
                     </tr>
                     <tr>
+                        <!--last name-->
                         <td>
                             @Html.LabelFor(b => b.customer_lastname, "Lastname", htmlAttributes: new { @class = "control-label col-md-2" })
                         </td>
@@ -78,10 +85,12 @@
                             <text>Gender</text>
                         </td>
                         <td>
+                            <!--gender-->
                             <input id="genderbox" placeholder="male/female" />
                         </td>
                     </tr>
                     <tr>
+                        <!--date of birth-->
                         <td>
                             @Html.LabelFor(b => b.customer_DOB, "DOB", htmlAttributes: new { @class = "control-label col-md-2" })
                         </td>
@@ -90,6 +99,7 @@
                         </td>
                     </tr>
                     <tr>
+                        <!--email-->
                         <td>
                             @Html.LabelFor(b => b.customer_email, "EmailID", htmlAttributes: new { @class = "control-label col-md-2" })
                         </td>
@@ -98,6 +108,7 @@
                         </td>
                     </tr>
                     <tr>
+                        <!--password-->
                         <td>
                             @Html.LabelFor(b => b.customer_password, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
                         </td>
@@ -106,6 +117,7 @@
                         </td>
                     </tr>
                     <tr>
+                        <!--button to register-->
                         <td colspan="2">
                             <center><input type="submit" name="Register" value="Register" id="loginButton" /></center>
                             @ViewBag.Message
