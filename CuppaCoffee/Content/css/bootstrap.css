@@ -178,7 +178,7 @@ input {
   border-radius:5%;
 }
 
-/*sumit button formatting*/
+/*button formatting*/
 button,
 select {
   text-transform: none;
@@ -187,7 +187,7 @@ select {
   border-color:#6f4e37;
   border-radius:5%;
 }
-/*karuna*/
+/*this class was used in the menu page and user page (my account)*/
 .myaccount {
     text-transform: none;
     background-color: khaki;
@@ -215,12 +215,9 @@ select {
     .myaccount input {
         height: 1em;
         width: 5vw
-        /*margin-top: 2vh;
-        border-radius: 10%;
-        color: black;*/
     }
-  
-      
+
+/*this is the background class that is used in the menu page and user page (my account)*/
 .myaccountouter {
     background-color: #54230A;
     width: 96.5vw;
@@ -241,11 +238,11 @@ select {
     font-weight: normal;
     margin-bottom: .5vh;
 }
-
+/*This is for the menu */
 .myaccount .ordertable{
     margin-left: 12.5vw;
 }
-.myaccount /*.ordertable*/ td{
+.myaccount  td{
     padding: 5vh;
 }
 .myaccount button {
@@ -254,6 +251,7 @@ select {
     box-shadow: 2px 2px 4px 5px #6f4e37;
     border: #6f4e37;
 }
+/*this is a button on the checkoutpage*/
 #orderitems button {
     color: #6f4e37;
     padding: 2vh;
@@ -261,6 +259,7 @@ select {
     /*border: #6f4e37;*/
     margin-bottom: 2vh;
 }
+/*this is a button on the login page*/
 #loginButton{
     color: #6f4e37;
     padding: .7vh;
@@ -268,20 +267,23 @@ select {
     border: #6f4e37;
     background-color: khaki;
 }
-
-
+/*this is to help the alignment of the menu page*/
 #latte {
     padding-top: 12vh;
 }
+/*this is to help the alignment of the menu page*/
 .orderRadio{
     margin-top: 2vh;
 }
+/*this is to help the alignment of the menu page*/
 #latteRadio{
     margin-top: 5vh;
 }
+
 .orderSpecific {
     padding: 1.5vh;
 }
+/*this is a button on the checkout page*/
 input[type="submit"] {
     color: #6f4e37;
     margin-bottom: 2vh;
@@ -424,7 +426,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-body {/*body attributes sumit ,font,color etc*/
+body {/*body attributes,font,color etc*/
   font-family: "Lucida Calligraphy" "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.5em;
   color: #333333;
@@ -447,7 +449,7 @@ select[multiple],
 textarea {
   background-image: none;
 }
-/*Sumit inventory button column */
+/*inventory button column */
 #inventorybutton{
     background-color:khaki;
     height:9vh;
@@ -457,14 +459,12 @@ textarea {
 #inventorybuttonmobile{
     display:none;
 }
-/*Sumit inventory product list*/
+/*inventory product list*/
 #inventorylist {
     width: 40vw;
 }
 
-
-
-/*sumit login details*/
+/*login details*/
 .logindetails {
     font-family: sans-serif;
     font-weight: bold;
@@ -474,9 +474,11 @@ textarea {
     border-radius: 5%;
     border-spacing: 1vw;
 }
+/*formatting the table content*/
 #logindetails >tr,td{
     vertical-align:central;
 }
+/*sign up sheet class*/
 .signupsheet {
     font-family: sans-serif;
     font-weight: bold;
@@ -488,22 +490,20 @@ textarea {
     display: flex;
     width: 30vw;
 }   
-
-/*Sumit login page table*/
+/*login page table*/
 .loginpagetable {
     background-color: #54230A;
     width: 96.6vw;
     height: 62vh;
     text-align: center;
     padding-left: 5%;
- 
 }
-
+/*formatting*/
 a {
   color: #6f4e37;
   text-decoration: none;
 }
-/* hover effect on anchor tags sumit*/
+/* hover effect on anchor tags*/
 a:hover
  {
     transition: all 0.4s ease-in-out;
@@ -511,7 +511,6 @@ a:hover
   color: orange;
   text-decoration: none;
 }
-
 /*login and checkout options sumit*/
 .logincheckout {
     position: relative;
@@ -520,7 +519,7 @@ a:hover
     margin-top: 5vh;
     margin-right: 5vw;
 }
-
+/*all the paragraphs in this class*/
     .logincheckout > p {
         padding-right:2vw;
         font-family: "Lucida Calligraphy";
@@ -528,18 +527,14 @@ a:hover
         color: #6f4e37;
         display: inline-block;
     }
-
- 
 /*separating focus from hover*/
     a:focus{
         color: orange;
         text-decoration:none;
     }
-
     img {
         vertical-align: middle;
     }
-
 .img-responsive {
   display: block;
   height: auto;
@@ -589,7 +584,7 @@ p {
   margin: 0 0 10px;
 }
 
-/*sumit, small images near the addresses*/
+/*small images near the addresses*/
 .aboutlogos{
     width:3vw;
     height:6vh;
@@ -918,7 +913,7 @@ code {
   background-color: #f9f2f4;
   border-radius: 4px;
 }
-/*Sumit addresses on about page*/
+/*addresses on about page*/
 pre {
   vertical-align:top;
   width: auto;
@@ -928,7 +923,6 @@ pre {
   display: block;
   font-size: 1.1vw;
   color: blanchedalmond;
-  /*word-break: break-all;*/
   word-wrap: break-word;
 }
 
@@ -949,25 +943,19 @@ pre code {
   max-height: 340px;
   overflow-y: scroll;
 }
-
-
-
 .container:before,
 .container:after {
   display: table;
   content: " ";
 }
-
 .container:after {
   clear: both;
 }
-
 .container:before,
 .container:after {
   display: table;
   content: " ";
 }
-
 .container:after {
   clear: both;
 }
@@ -2553,10 +2541,6 @@ input[type="button"].btn-block {
 
 .fade.in {
   opacity: 1;
-}
-
-.collapse {
-  /*display: none;*/
 }
 
     .collapse.in {
@@ -4376,7 +4360,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   margin-bottom: 0;
 }
 
-/*Cuppa Coffee*/
+/*Cuppa Coffee navigation*/
 .navbar-brand {
   position:absolute;
   font-size: 2vw;
@@ -4390,7 +4374,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-brand:focus {
   text-decoration: none;
 }
-/*Cuppa Coffee*/
+/*Cuppa Coffee navigation responsive*/
 @media (min-width: 768px) {
     .navbar > .container .navbar-brand {
         position: absolute;
@@ -4429,10 +4413,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
     display: none;
   }
 }
-
-/*.navbar-nav {
-  margin: 7.5px -15px;
-}*/
 
     .navbar-nav > li > a {
        margin-left: auto;
@@ -4709,7 +4689,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-link:hover {
   color: #333333;
 }
-/*Top khaki bar containing logo and menu items, Sumit*/
+/*Top khaki bar containing logo and menu items*/
 .navbar-inverse {
   position: static;
   background-color:khaki;
@@ -4777,11 +4757,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
   background-color: #ffffff;
 }
 
-/*.navbar-inverse .navbar-collapse,
-.navbar-inverse .navbar-form {
-  border-color: #101010;
-}*/
-
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
@@ -4807,9 +4782,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 @media (max-width: 767px) {
-  /*.navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
-    border-color: #080808;
-  }*/
+
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
     color: #999999;
   }
@@ -4841,7 +4814,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 
-/*content backgrounds sumit*/
+/*content backgrounds*/
 #Contentbg {
     
     vertical-align: top;
@@ -4857,10 +4830,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
     display: inline-block;
     vertical-align: top;
     border-right: 1em double #6f4e37;
-    /*border-collapse: collapse;*/
 }
 
-
+/*background for admin page*/
 #Contentbgforinventory {
     vertical-align: top;
     width: 96.5vw;
@@ -4876,9 +4848,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
     vertical-align: top;
     border-right: 1em double #6f4e37;
 }
+/*formatting table content*/
 #newContentbg > td, tr {
     vertical-align: top;
 }
+/*background for login page and about us*/
     #newContentbg {
         width: 96.5vw;
         min-width: 10px;
@@ -4906,7 +4880,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     border-collapse: collapse;
 
 }
-/*sumit order items for checkout page*/
+/*order items for checkout page*/
 #orderitems {
     vertical-align: top;
     width: 63vw;
@@ -4917,12 +4891,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
     margin-top: 18vh;
     border-collapse: unset;
 }
-/*for Our origin text*/
-
-/*td{
-    border: 10px solid black;
-}*/
-
 /*mascot attributes*/
 .mascot {
     vertical-align: top;
@@ -4936,19 +4904,18 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .mascotmobile {
     display:none;
 }
-
-
+/*the steaming cup of coffee on the side*/
 .thegifcontainer {
    width: 33vw;
     height: 66vh;
 
 }
-/*coffee gif sumit*/
+/*coffee gif*/
 #thegif {
    width: 30vw;
     height:66vh;
 }
-/*sumit footer coding*/
+/*footer coding*/
 @media (min-width: 461px) {
     footer {
         vertical-align: bottom;
@@ -4969,8 +4936,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
             text-align: center;
         }
 }
-    footer a:hover {
-        
+    footer a:hover {    
         transform: none;
     }
 .breadcrumb {
@@ -7243,25 +7209,18 @@ a.list-group-item:focus {
     }
 
 
-/*    .city{
-        display: inline-block;
-    }
-.shrink{
-    display:inline-block;
-}
-*/
 
-/*karuna make %*/
+/*mobile version %*/
 @media (max-width: 460px) {
-
+    /*styling the background on the main content*/
     body {
         background-color: khaki;
     }
-
+    /*removing the footer*/
     footer {
         display: none;
     }
-
+    /*removing the steaming cup of coffee*/
     .gifcontainer {
         display: none;
     }
@@ -7269,7 +7228,7 @@ a.list-group-item:focus {
     .index_text {
         display: none;
     }
-    /*the cup*/
+    /*the cup/logo*/
     .navbar .navbar-left img {
         width: 35vw;
         display: block;
@@ -7279,23 +7238,24 @@ a.list-group-item:focus {
         margin-top: 5vh;
         font-weight: bold;
     }
-
+    /*formatting the navigation bar*/
     .nav > ul {
         margin-right: 10vw;
     }
-    /*navigational links*/
+    /*navigational links to the left*/
     .nav > li {
         display: block;
     }
+    /*navigational links to the left*/
 
     #extralink1, #extralink2, #extralink3, #extralink4, #extralink5 {
         display: block;
     }
-
+    /*no picture next to the address in the about us page*/
     .aboutlogos {
         display: none;
     }
-
+    /*formatting the background for login page and about us*/
     #newContentbg {
         width: 50vw;
         border-radius: 10px;
@@ -7303,19 +7263,12 @@ a.list-group-item:focus {
         margin-top: 0%;
         font-size:1.1vh;
     }
-
+    /*formatting the background*/
     #Contentbg {
         display: none;
         font-size:1.1vh;
-        /*border: none;
-        border-radius: 10px;
-        width: 50vw;
-        float: right;
-        margin-left: 0vw;
-        position: absolute;
-        right: 2vw;*/
     }
-    /*order items view for mobile sumit*/
+    /*order items view for mobile*/
     #orderitems {
         vertical-align: top;
         width: 40vw;
@@ -7323,11 +7276,10 @@ a.list-group-item:focus {
         margin-left: 2%;
         text-align: center;
     }
-
         #orderitems > td {
             display: block;
         }
-
+/*postitioning and formatting Mr. Kingbread*/
     .mascotmobile {
         display: inline-block;
         float: right;
@@ -7340,69 +7292,64 @@ a.list-group-item:focus {
     #funfact {
         display: none;
     }
-
+    /*formatting content background*/
     .body-content {
-        /*border: none;*/
-        /* width: 50px;*/
-        /* float: right;*/
         margin-left: 45%;
-        position: absolute;
-        /*right: 2vw;*/
         margin-top: 30vh;
         font-family: "Lucida Calligraphy", sans-serif, "Times New Roman";
         padding-left:0px;
         padding-right:0px;
     }
-
+    /*formatting headers*/
     #addressbg h3 {
         display: none;
     }
-
+    /*formatting the about us page*/
     #addressbg {
         border: none;
     }
-
+        /*formatting the about us page addresses*/
         #addressbg address {
             display: none;
         }
-
+        /*formatting the about us page table*/
         #addressbg td {
             margin-left: 1%;
             float: left;
             clear: both;
             width: auto;
         }
-
+        /*formatting the about us page address*/
         #addressbg strong {
             margin: auto;
             font-size: 4em;
         }
-
+        /*formatting the paragraphs in the login page*/
     .logincheckout > p {
         display: none;
     }
-
+    /*taking out the cup of coffee*/
     #thegif {
         display: none;
     }
-
+    /*taking away hover capabilities*/
     .navbar-brand:hover {
         transform: none;
         transition: none;
     }
-
+    /*taking away hover capabilities*/
     .navbar .navbar-left:hover {
         transform: none;
         transition: none;
     }
-
+    /*formatting nav bar*/
     .nav {
         font-size: 1.4em;
         margin-top: 20vh;
         position: absolute;
         font-family: "Lucida Calligraphy", sans-serif, "Times New Roman"
     }
-
+    /*formatting nav bar*/
     .navbar-brand {
         margin-top: 5%;
         display: block;
@@ -7411,38 +7358,30 @@ a.list-group-item:focus {
         text-align: center;
         font-family: "Lucida Calligraphy", sans-serif, "Times New Roman"
     }
-
+    /*formatting the login page*/
     .loginpagetable strong {
         display: none;
     }
-
+    /*formatting the login page button*/
     #loginButton {
         height:5vh;
     }
         #gender {
         display: block;
     }
-
+    /*removing the login page images*/
     .loginpagetable img {
         display: none;
     }
-
+    /*formatting the login page button*/
     .loginpagetable button {
         width: 50%;
     }
-
-
+    /*the next few inputs are formatting the login page*/
     .loginpagetable {
-        /*
-            height: 35vh;
-        width:auto;
-        border-radius: 10px;
-      margin-top:4vh;
-        */
         width:50vw;
         height: auto;
         border-radius: 10px;
-        /*width: auto;*/
         position: relative;
         margin-left: -12vw;
         margin-top: -7vh;
@@ -7450,7 +7389,6 @@ a.list-group-item:focus {
 
         .loginpagetable input {
             width: 20vw;
-           
         }
         .loginpagetable text{
             display: inline-block;
@@ -7461,20 +7399,12 @@ a.list-group-item:focus {
     }
 
     #logindetails > tr {
-        /*margin-bottom: 15vh;
-        margin-top: 0;
-        margin-left: auto;*/
         vertical-align: central;
         position: absolute;
         margin-top: -150px;
     }
-
+    /*formatting the sign up table on the login page*/
     #signupsheet {
-        /* border: none;
-        width: 50vw;
-        float: right;
-        position: absolute;
-        left: 10vw;*/
         border: none;
         width: 50vw;
         float: right;
@@ -7487,94 +7417,62 @@ a.list-group-item:focus {
         padding-top: .5vh;
         width: 20vw;
     }
-
+    /*formatting the background for userpage/my account and menu*/
     .myaccountouter {
         margin-left: -7vw;
         width: 60vw;
         border-radius: 5%;
         margin-top: -10vh;
     }
-
+    /*formatting for userpage/my account and menu*/
     .myaccount input {
         width: 40vw;
     }
-
+    /*formatting the background for userpage/my account and menu*/
     .myaccount {
         border-left: none;
         border-right: none;
     }
-
+        /*formatting the background for userpage/my account and menu*/
         .myaccount .ordertable {
             margin-left: 0vw;
         }
-
-            .myaccount .ordertable td {
-            }
-    /*#firstRowOrder{
-        position: absolute;
-        z-index: 1;
-    }
-    #secondRowOrder {
-        position: absolute;
-        z-index: 2;
-        float: right;
-        clear: both;
-    }
-    #foodOrder {
-        position: absolute;
-        z-index: 3;
-        float: right;
-        clear: both;
-    }
-    #orderButton {
-        position: absolute;
-        z-index: 4;
-        float: right;
-        clear: both;
-    }*/
+        /*menu table formatting*/
     .ordertable td {
         display:block;
-        /*position: relative;
-        float: right;*/
     }
-
     #foodOrder td {
         margin-bottom: -3vh;
     }
-
+    /*button on the menu formatting*/
     #orderButton button {
         padding: .5vh;
         width: 15vh;
         height: 5vh;
 
     }
-
+    /*menu table formatting*/
     .myaccount .ordertable td {
         padding-left: 0vh;
         padding-bottom: 2vh;
     }
-
+    /*checkout page formatting*/
     #orderitems {
         margin-top: 3vh;
         width: 60vw;
         padding-right: 2%;
         display:block;
     }
-
+    /*check out page money display formatting*/
     #money {
         width: 5vw;
     }
-    /*commented by sumit while testing*/
-    /*#orderitems #orderButton {
-        padding-left: 7vw;
-        padding-top: 3vh;
-    }*/
-
-    /*Sumit's content for inventory page*/
+    /*content for inventory page*/
 
     #inventorybutton {
                 display:none;
     }
+    /*formatting inventory button*/
     #inventorybuttonmobile {
         background-color: khaki;
         height: 3vh;
@@ -7583,7 +7481,7 @@ a.list-group-item:focus {
         font-size: 3vw;
         display: block;
     }
-
+    /*formatting inventory background*/
     #Contentbgforinventory {
         vertical-align: top;
         width: 40vw;
@@ -7611,6 +7509,7 @@ a.list-group-item:focus {
     #orderitems img{
         display: none;
     }
+    /*formatting button for checkout page*/
     input[type="submit"] {
 
         margin-top: 0vh;
@@ -7618,6 +7517,7 @@ a.list-group-item:focus {
         width: auto;
         margin-left: 1vw;
     }
+    /*moving checkout page to the left*/
     .orderDetail{
       margin-left: -12vw; 
     }
